@@ -9,7 +9,7 @@ namespace GoodSamaritan.Models.SmartEntity
     public class SmartEntity
     {
         [Key]
-        public int ClienReferenceNumber { get; set; }
+        public int ClientReferenceNumber { get; set; }
         public SexWorkExploitation SexWorkerExploitation { get; set; }
         public MultiplePerpetrators MultiplePerpetrators { get; set; }
         public DrugFacilitatedAssault DrugFacilitatedAssault { get; set; }
