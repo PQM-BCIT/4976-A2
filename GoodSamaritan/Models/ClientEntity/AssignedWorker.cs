@@ -9,7 +9,7 @@ namespace GoodSamaritan.Models
     public class AssignedWorker
     {
         [Key]
-        public String AssignedWorker { get; set; }
+        public string AssignedWorker { get; set; }
 
         public List<ClientModel> Client { get; set; }
     }

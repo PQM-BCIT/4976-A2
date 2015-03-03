@@ -9,7 +9,7 @@ namespace GoodSamaritan.Models.ClientEntity
     public class ReferralContact
     {
         [Key]
-        public String ReferralContact { get; set; }
+        public string ReferralContact { get; set; }
 
         public List<ClientModel> Client { get; set; }
     }
