@@ -11,6 +11,6 @@ namespace GoodSamaritan.Models.SmartEntity
         [Key]
         public string Name { get; set; }
 
-        public List<SmartEntity> List { get; set; }
+        public List<SmartModel> List { get; set; }
     }
 }

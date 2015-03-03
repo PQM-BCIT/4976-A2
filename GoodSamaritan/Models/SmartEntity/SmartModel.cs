@@ -6,7 +6,7 @@ using System.Web;
 
 namespace GoodSamaritan.Models.SmartEntity
 {
-    public class SmartEntity
+    public class SmartModel
     {
         [Key]
         public int ClientReferenceNumber { get; set; }
