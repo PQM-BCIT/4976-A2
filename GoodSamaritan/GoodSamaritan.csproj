@@ -165,8 +165,27 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ClientEntity\AbuserRealtionship.cs" />
+    <Compile Include="Models\ClientEntity\Age.cs" />
+    <Compile Include="Models\ClientEntity\AssignedWorker.cs" />
+    <Compile Include="Models\ClientEntity\Crisis.cs" />
+    <Compile Include="Models\ClientEntity\DuplicateFile.cs" />
+    <Compile Include="Models\ClientEntity\Ethnicity.cs" />
+    <Compile Include="Models\ClientEntity\FamilyViolenceFile.cs" />
+    <Compile Include="Models\ClientEntity\FiscalYear.cs" />
+    <Compile Include="Models\ClientEntity\Incident.cs" />
+    <Compile Include="Models\ClientEntity\Program.cs" />
+    <Compile Include="Models\ClientEntity\ReferralContact.cs" />
+    <Compile Include="Models\ClientEntity\ReferralSource.cs" />
+    <Compile Include="Models\ClientEntity\RepeatClient.cs" />
+    <Compile Include="Models\ClientEntity\RiskLevel.cs" />
+    <Compile Include="Models\ClientEntity\StatusOfFile.cs" />
+    <Compile Include="Models\ClientEntity\VictimOfIncident.cs" />
+    <Compile Include="Models\ClientModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\ClientEntity\RiskStatus.cs" />
+    <Compile Include="Models\ClientEntity\Service.cs" />
     <Compile Include="Models\SmartEntity\BadDateReport.cs" />
     <Compile Include="Models\SmartEntity\CityOfAssault.cs" />
     <Compile Include="Models\SmartEntity\CityOfResidence.cs" />
