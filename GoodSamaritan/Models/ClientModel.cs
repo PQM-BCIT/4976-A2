@@ -11,10 +11,19 @@ namespace GoodSamaritan.Models
     {
         [Key]
         public FiscalYear FiscalYear { get; set; }
+
+        [Range(1, 12, ErrorMessage = "Please enter a valid month (1 - 12)"]
         public int Month { get; set; }
+
+        [Range(1,31, ErrorMessage = "Please enter a valid date (1-31)")]
         public int Day { get; set; }
+
+        [RegularExpression("/^[A-Z][a-z]*$/", ErrorMessage = "Please enter a valid surname (eg. 'Smith')")]
         public string Surname { get; set; }
+
+        [RegularExpression("/^[A-Z][a-z]*$/", ErrorMessage = "Please enter a valid first name (eg. 'James')")]
         public string FirstName { get; set; }
+
         public string PoliceFileNumber { get; set; }
         public int CourtFileNumber { get; set; }
         public RiskLevel RiskLevel { get; set; }
@@ -39,8 +48,14 @@ namespace GoodSamaritan.Models
         public int NumberOfChildren7To12 { get; set; }
         public int NumberOfChildren13To18 { get; set; }
         public StatusOfFile StatusOfFile { get; set; }
+
+        [DataType(DataType.Date)]
         public DateTime DateLastTransferred { get; set; }
+
+        [DataType(DataType.Date)]
         public DateTime DateClosed { get; set; }
+
+        [DataType(DataType.Date)]
         public DateTime DateReOpened { get; set; }
     }
 }
