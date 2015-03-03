@@ -181,7 +181,7 @@
     <Compile Include="Models\SmartEntity\ReferredToCBVS.cs" />
     <Compile Include="Models\SmartEntity\ReferringHospital.cs" />
     <Compile Include="Models\SmartEntity\SexWorkExploitation.cs" />
-    <Compile Include="Models\SmartEntity\SmartModel.cs" />
+    <Compile Include="Models\SmartModel.cs" />
     <Compile Include="Models\SmartEntity\SocialWorkAttendance.cs" />
     <Compile Include="Models\SmartEntity\ThirdPartyReport.cs" />
     <Compile Include="Models\SmartEntity\VictimServicesAttendance.cs" />
