@@ -167,6 +167,24 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\SmartEntity\BadDateReport.cs" />
+    <Compile Include="Models\SmartEntity\CityOfAssault.cs" />
+    <Compile Include="Models\SmartEntity\CityOfResidence.cs" />
+    <Compile Include="Models\SmartEntity\DrugFacilitatedAssault.cs" />
+    <Compile Include="Models\SmartEntity\EvidenceStored.cs" />
+    <Compile Include="Models\SmartEntity\HIVMeds.cs" />
+    <Compile Include="Models\SmartEntity\HospitalAttended.cs" />
+    <Compile Include="Models\SmartEntity\MedicalOnly.cs" />
+    <Compile Include="Models\SmartEntity\MultiplePerpetrators.cs" />
+    <Compile Include="Models\SmartEntity\PoliceAttendance.cs" />
+    <Compile Include="Models\SmartEntity\PoliceReported.cs" />
+    <Compile Include="Models\SmartEntity\ReferredToCBVS.cs" />
+    <Compile Include="Models\SmartEntity\ReferringHospital.cs" />
+    <Compile Include="Models\SmartEntity\SexWorkExploitation.cs" />
+    <Compile Include="Models\SmartEntity\SmartModel.cs" />
+    <Compile Include="Models\SmartEntity\SocialWorkAttendance.cs" />
+    <Compile Include="Models\SmartEntity\ThirdPartyReport.cs" />
+    <Compile Include="Models\SmartEntity\VictimServicesAttendance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
