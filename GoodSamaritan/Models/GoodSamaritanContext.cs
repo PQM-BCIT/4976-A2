@@ -47,14 +47,14 @@ namespace GoodSamaritan.Models
         public virtual DbSet<HIVMedsModel> HIVMedsModel { get; set; }
         public virtual DbSet<HospitalAttendedModel> HospitalAttendedModel { get; set; }
         public virtual DbSet<MedicalOnlyModel> MedicalOnlyModel { get; set; }
-        public virtual DbSet<MultiplePerpetratorsModel> MultipePerpetratorsModel { get; set; }
+        public virtual DbSet<MultiplePerpetratorsModel> MultiplePerpetratorsModel { get; set; }
         public virtual DbSet<PoliceAttendanceModel> PoliceAttendanceModel { get; set; }
         public virtual DbSet<PoliceReportedModel> PoliceReportedModel { get; set; }
         public virtual DbSet<ReferredToCBVSModel> ReferredToCBVSModel { get; set; }
         public virtual DbSet<ReferringHospitalModel> ReferringHospitalModel { get; set; }
         public virtual DbSet<SexWorkExploitationModel> SexWorkExploitationModel { get; set; }
         public virtual DbSet<SocialWorkAttendanceModel> SocialWorkAttendanceModel { get; set; }
-        public virtual DbSet<ThirdPartyReportModel> ThirdPartReportModel { get; set; }
+        public virtual DbSet<ThirdPartyReportModel> ThirdPartyReportModel { get; set; }
         public virtual DbSet<VictimServicesAttendanceModel> VictimServicesAttendanceModel { get; set; }
     }
 }
