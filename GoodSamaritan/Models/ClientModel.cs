@@ -10,9 +10,9 @@ namespace GoodSamaritan.Models
     public class ClientModel
     {
         [Key]
-        public FiscalYear FiscalYear { get; set; }
+        public FiscalYearModel FiscalYear { get; set; }
 
-        [Range(1, 12, ErrorMessage = "Please enter a valid month (1 - 12)"]
+        [Range(1, 12, ErrorMessage = "Please enter a valid month (1 - 12)")]
         public int Month { get; set; }
 
         [Range(1,31, ErrorMessage = "Please enter a valid date (1-31)")]
@@ -26,28 +26,28 @@ namespace GoodSamaritan.Models
 
         public string PoliceFileNumber { get; set; }
         public int CourtFileNumber { get; set; }
-        public RiskLevel RiskLevel { get; set; }
-        public Crisis Crisis { get; set; }
-        public Service Service { get; set; }
-        public Program Program { get; set; }
+        public RiskLevelModel RiskLevel { get; set; }
+        public CrisisModel Crisis { get; set; }
+        public ServiceModel Service { get; set; }
+        public ProgramModel Program { get; set; }
         public string RiskAssessmentAssignedTo { get; set; }
         public RiskStatus RiskStatus { get; set; }
-        public AssignedWorker AssignedWorker { get; set; }
-        public ReferralSource ReferralSource { get; set; }
-        public Incident Incident { get; set; }
+        public AssignedWorkerModel AssignedWorker { get; set; }
+        public ReferralSourceModel ReferralSource { get; set; }
+        public IncidentModel Incident { get; set; }
         public string AbuserSurnameFirstName { get; set; }
-        public AbuserRealtionship AbuserRealtionship { get; set; }
-        public VictimOfIncident VictimOfIncident { get; set; }
-        public FamilyViolenceFile FamilyViolenceFile { get; set; }
+        public AbuserRealtionshipModel AbuserRealtionship { get; set; }
+        public VictimOfIncidentModel VictimOfIncident { get; set; }
+        public FamilyViolenceFileModel FamilyViolenceFile { get; set; }
         public char Gender { get; set; }
-        public Ethnicity Ethnicity { get; set; }
-        public Age Age { get; set; }
-        public RepeatClient RepeatClient { get; set; }
-        public DuplicateFile DuplicateFile { get; set; }
+        public EthnicityModel Ethnicity { get; set; }
+        public AgeModel Age { get; set; }
+        public RepeatClientModel RepeatClient { get; set; }
+        public DuplicateFileModel DuplicateFile { get; set; }
         public int NumberOfChildren0To6 { get; set; }
         public int NumberOfChildren7To12 { get; set; }
         public int NumberOfChildren13To18 { get; set; }
-        public StatusOfFile StatusOfFile { get; set; }
+        public StatusOfFileModel StatusOfFile { get; set; }
 
         [DataType(DataType.Date)]
         public DateTime DateLastTransferred { get; set; }

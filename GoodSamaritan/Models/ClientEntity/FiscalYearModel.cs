@@ -6,10 +6,10 @@ using System.Web;
 
 namespace GoodSamaritan.Models.ClientEntity
 {
-    public class RiskLevel
+    public class FiscalYearModel
     {
         [Key]
-        public string RiskLevel { get; set; }
+        public string Fiscalyear { get; set; }
 
         public List<ClientModel> Client { get; set; }
     }

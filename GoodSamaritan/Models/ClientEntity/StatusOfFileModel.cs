@@ -6,10 +6,10 @@ using System.Web;
 
 namespace GoodSamaritan.Models.ClientEntity
 {
-    public class FamilyViolenceFile
+    public class StatusOfFileModel
     {
         [Key]
-        public string FamilyViolenceFile { get; set; }
+        public string StatusOfFile { get; set; }
 
         public List<ClientModel> Client { get; set; }
     }

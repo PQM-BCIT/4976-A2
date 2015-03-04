@@ -6,7 +6,7 @@ using System.Web;
 
 namespace GoodSamaritan.Models.ClientEntity
 {
-    public class Ethnicity
+    public class EthnicityModel
     {
         [Key]
         public string Ethnicity { get; set; }

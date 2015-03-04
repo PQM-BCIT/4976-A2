@@ -4,12 +4,12 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace GoodSamaritan.Models.ClientEntity
+namespace GoodSamaritan.Models
 {
-    public class AbuserRealtionship
+    public class AssignedWorkerModel
     {
         [Key]
-        public string AbuserRelationship { get; set; }
+        public string AssignedWorker { get; set; }
 
         public List<ClientModel> Client { get; set; }
     }

@@ -6,10 +6,10 @@ using System.Web;
 
 namespace GoodSamaritan.Models.ClientEntity
 {
-    public class Incident
+    public class RepeatClientModel
     {
         [Key]
-        public string Incident { get; set; }
+        public string RepeatClient { get; set; }
 
         public List<ClientModel> Client { get; set; }
     }
