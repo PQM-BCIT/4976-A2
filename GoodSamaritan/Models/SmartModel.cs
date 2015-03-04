@@ -12,59 +12,42 @@ namespace GoodSamaritan.Models.SmartEntity
         [Key]
         public int ClientReferenceNumber { get; set; }
 
-        [ForeignKey("SexWorkExploitation")]
-        public SexWorkExploitation SexWorkerExploitation { get; set; }
+        public SexWorkExploitationModel SexWorkerExploitation { get; set; }
 
-        [ForeignKey("MultiplePerpetrators")]
-        public MultiplePerpetrators MultiplePerpetrators { get; set; }
+        public MultiplePerpetratorsModel MultiplePerpetrators { get; set; }
 
-        [ForeignKey("DrugFacilitatedAssut")]
-        public DrugFacilitatedAssault DrugFacilitatedAssault { get; set; }
+        public DrugFacilitatedAssaultModel DrugFacilitatedAssault { get; set; }
 
-        [ForeignKey("CityOfAssault")]
-        public CityOfAssault CityOfAssault { get; set; }
+        public CityOfAssaultModel CityOfAssault { get; set; }
 
-        [ForeignKey("CityOfResidence")]
-        public CityOfResidence CityOfResidence { get; set; }
+        public CityOfResidenceModel CityOfResidence { get; set; }
 
         [Range(0, int.MaxValue, ErrorMessage = "Must be a valid positive integer number")]
         public int AccompanimentMinute { get; set; }
         
-        [ForeignKey("ReferringHospital")]
-        public ReferringHospital ReferringHospital { get; set; }
+        public ReferringHospitalModel ReferringHospital { get; set; }
 
-        [ForeignKey("HospitalAttended")]
-        public HospitalAttended HospitalAttended { get; set; }
+        public HospitalAttendedModel HospitalAttended { get; set; }
 
-        [ForeignKey("SocialWorkAttendance")]
-        public SocialWorkAttendance SocialWorkAttendance { get; set; }
+        public SocialWorkAttendanceModel SocialWorkAttendance { get; set; }
 
-        [ForeignKey("PoliceAttendance")]
-        public PoliceAttendance PoliceAttendance { get; set; }
+        public PoliceAttendanceModel PoliceAttendance { get; set; }
 
-        [ForeignKey("VictimServicesAttendance")]
-        public VictimServicesAttendance VictimServicesAttendance { get; set; }
+        public VictimServicesAttendanceModel VictimServicesAttendance { get; set; }
 
-        [ForeignKey("MedicalOnly")]
-        public MedicalOnly MedicalOnly { get; set; }
+        public MedicalOnlyModel MedicalOnly { get; set; }
 
-        [ForeignKey("EvidenceStored")]
-        public EvidenceStored EvidenceStored { get; set; }
+        public EvidenceStoredModel EvidenceStored { get; set; }
 
-        [ForeignKey("HIVMeds")]
-        public HIVMeds HIVMeds { get; set; }
+        public HIVMedsModel HIVMeds { get; set; }
 
-        [ForeignKey("ReferrdToCBVS")]
-        public ReferredToCBVS ReferredToCBVS { get; set; }
+        public ReferredToCBVSModel ReferredToCBVS { get; set; }
 
-        [ForeignKey("PoliceReported")]
-        public PoliceReported PoliceReported { get; set; }
+        public PoliceReportedModel PoliceReported { get; set; }
 
-        [ForeignKey("ThirdPartReport")]
-        public ThirdPartyReport ThirdPartyReport { get; set; }
+        public ThirdPartyReportModel ThirdPartyReport { get; set; }
 
-        [ForeignKey("BadDateReport")]
-        public BadDateReport BadDateReport { get; set; }
+        public BadDateReportModel BadDateReport { get; set; }
 
         [Range(0, int.MaxValue, ErrorMessage = "Must be a valid positive integer number")]
         public int NumberTransportsProvided { get; set; }
