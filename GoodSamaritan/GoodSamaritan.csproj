@@ -161,8 +161,15 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\Smart\DrugFacilitatedAssaultModelController.cs" />
+    <Compile Include="Controllers\Smart\MultiplePerpetratorsModelController.cs" />
+    <Compile Include="Controllers\Smart\SexWorkerExploitationModelsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\GoodSamaritanMigrations\201503040827219_Initial.cs" />
+    <Compile Include="Migrations\GoodSamaritanMigrations\201503040827219_Initial.Designer.cs">
+      <DependentUpon>201503040827219_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\GoodSamaritanMigrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -201,7 +208,7 @@
     <Compile Include="Models\SmartEntity\PoliceReportedModel.cs" />
     <Compile Include="Models\SmartEntity\ReferredToCBVSModel.cs" />
     <Compile Include="Models\SmartEntity\ReferringHospitalModel.cs" />
-    <Compile Include="Models\SmartEntity\SexWorkExploitationModel.cs" />
+    <Compile Include="Models\SmartEntity\SexWorkerExploitationModel.cs" />
     <Compile Include="Models\SmartModel.cs" />
     <Compile Include="Models\SmartEntity\SocialWorkAttendanceModel.cs" />
     <Compile Include="Models\SmartEntity\ThirdPartyReportModel.cs" />
@@ -265,6 +272,21 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\MultiplePerpetratorsModel\Create.cshtml" />
+    <Content Include="Views\MultiplePerpetratorsModel\Delete.cshtml" />
+    <Content Include="Views\MultiplePerpetratorsModel\Details.cshtml" />
+    <Content Include="Views\MultiplePerpetratorsModel\Edit.cshtml" />
+    <Content Include="Views\MultiplePerpetratorsModel\Index.cshtml" />
+    <Content Include="Views\DrugFacilitatedAssaultModel\Create.cshtml" />
+    <Content Include="Views\DrugFacilitatedAssaultModel\Delete.cshtml" />
+    <Content Include="Views\DrugFacilitatedAssaultModel\Details.cshtml" />
+    <Content Include="Views\DrugFacilitatedAssaultModel\Edit.cshtml" />
+    <Content Include="Views\DrugFacilitatedAssaultModel\Index.cshtml" />
+    <Content Include="Views\SexWorkerExploitationModels\Create.cshtml" />
+    <Content Include="Views\SexWorkerExploitationModels\Delete.cshtml" />
+    <Content Include="Views\SexWorkerExploitationModels\Details.cshtml" />
+    <Content Include="Views\SexWorkerExploitationModels\Edit.cshtml" />
+    <Content Include="Views\SexWorkerExploitationModels\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -275,6 +297,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\GoodSamaritanMigrations\201503040827219_Initial.resx">
+      <DependentUpon>201503040827219_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

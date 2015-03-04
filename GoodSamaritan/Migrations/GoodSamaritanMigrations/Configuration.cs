@@ -32,11 +32,11 @@ namespace GoodSamaritan.Migrations.GoodSamaritanMigrations
 
 
             // Smart Entity
-            context.SexWorkExploitationModel.AddOrUpdate(
-                  s => s.SexWorkExploitation,
-                  new SexWorkExploitationModel { SexWorkExploitation = "Yes" },
-                  new SexWorkExploitationModel { SexWorkExploitation = "No" },
-                  new SexWorkExploitationModel { SexWorkExploitation = "N/A" }
+            context.SexWorkerExploitationModel.AddOrUpdate(
+                  s => s.SexWorkerExploitation,
+                  new SexWorkerExploitationModel { SexWorkerExploitation = "Yes" },
+                  new SexWorkerExploitationModel { SexWorkerExploitation = "No" },
+                  new SexWorkerExploitationModel { SexWorkerExploitation = "N/A" }
             );
 
             context.MultiplePerpetratorsModel.AddOrUpdate(

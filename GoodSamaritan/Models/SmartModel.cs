@@ -12,7 +12,7 @@ namespace GoodSamaritan.Models.SmartEntity
         [Key]
         public int ClientReferenceNumber { get; set; }
 
-        public SexWorkExploitationModel SexWorkerExploitation { get; set; }
+        public SexWorkerExploitationModel SexWorkerExploitation { get; set; }
 
         public MultiplePerpetratorsModel MultiplePerpetrators { get; set; }
 

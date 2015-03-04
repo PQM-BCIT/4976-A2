@@ -52,7 +52,7 @@ namespace GoodSamaritan.Models
         public virtual DbSet<PoliceReportedModel> PoliceReportedModel { get; set; }
         public virtual DbSet<ReferredToCBVSModel> ReferredToCBVSModel { get; set; }
         public virtual DbSet<ReferringHospitalModel> ReferringHospitalModel { get; set; }
-        public virtual DbSet<SexWorkExploitationModel> SexWorkExploitationModel { get; set; }
+        public virtual DbSet<SexWorkerExploitationModel> SexWorkerExploitationModel { get; set; }
         public virtual DbSet<SocialWorkAttendanceModel> SocialWorkAttendanceModel { get; set; }
         public virtual DbSet<ThirdPartyReportModel> ThirdPartyReportModel { get; set; }
         public virtual DbSet<VictimServicesAttendanceModel> VictimServicesAttendanceModel { get; set; }
