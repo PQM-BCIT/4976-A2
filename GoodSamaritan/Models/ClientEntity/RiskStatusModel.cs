@@ -9,6 +9,7 @@ namespace GoodSamaritan.Models
     public class RiskStatus
     {
         [Key]
+        public int RiskId { get; set; }
         public string RiskStats { get; set; }
 
         public List<ClientModel> Client { get; set; }

@@ -9,6 +9,7 @@ namespace GoodSamaritan.Models.ClientEntity
     public class FiscalYearModel
     {
         [Key]
+        public int FiscalYearId { get; set; }
         public string Fiscalyear { get; set; }
 
         public List<ClientModel> Client { get; set; }
