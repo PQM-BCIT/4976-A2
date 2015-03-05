@@ -5,6 +5,7 @@ namespace GoodSamaritan.Migrations.GoodSamaritanMigrations
     using System.Data.Entity.Migrations;
     using System.Linq;
     using GoodSamaritan.Models;
+    using GoodSamaritan.Models.ClientEntity;
     using GoodSamaritan.Models.SmartEntity;
 
     internal sealed class Configuration : DbMigrationsConfiguration<GoodSamaritan.Models.GoodSamaritanContext>
@@ -209,6 +210,181 @@ namespace GoodSamaritan.Migrations.GoodSamaritanMigrations
                   new BadDateReportModel { BadDateReport = "No" },
                   new BadDateReportModel { BadDateReport = "N/A" }
             );
+
+            context.FiscalYearModel.AddOrUpdate(
+                s => s.FiscalYear,
+                new FiscalYearModel { FiscalYear = "10-11" },
+                new FiscalYearModel { FiscalYear = "11-12" },
+                new FiscalYearModel { FiscalYear = "12-13" },
+                new FiscalYearModel { FiscalYear = "13-14" },
+                new FiscalYearModel { FiscalYear = "14-15" },
+                new FiscalYearModel { FiscalYear = "15-16" },
+                new FiscalYearModel { FiscalYear = "16-17" }
+            );
+
+            context.RiskLevelModel.AddOrUpdate(
+                s => s.RiskLevel,
+                new RiskLevelModel { RiskLevel = "High" },
+                new RiskLevelModel { RiskLevel = "DVU" },
+                new RiskLevelModel { RiskLevel = "null" }
+            );
+
+            context.CrisisModel.AddOrUpdate(
+                s => s.Crisis,
+                new CrisisModel { Crisis = "Call" },
+                new CrisisModel { Crisis = "Accompaniment" },
+                new CrisisModel { Crisis = "Drop-In" }
+            );
+
+            context.ServiceModel.AddOrUpdate(
+                s => s.Service,
+                new ServiceModel { Service ="File" },
+                new ServiceModel { Service = "N/A" }
+            );
+
+            context.ProgramModel.AddOrUpdate(
+                s => s.Program,
+                new ProgramModel { Program = "Crisis" },
+                new ProgramModel { Program = "Court" },
+                new ProgramModel { Program = "SMART" },
+                new ProgramModel { Program = "DVU" },
+                new ProgramModel { Program = "MCFD" }
+            );
+
+            context.RiskStatusModel.AddOrUpdate(
+                s => s.RiskStatus,
+                new RiskStatusModel { RiskStatus = "Pending" },
+                new RiskStatusModel { RiskStatus = "Complete" },
+                new RiskStatusModel { RiskStatus = "null" }
+            );
+
+            context.AssignedWorkerModel.AddOrUpdate(
+                s => s.AssignedWorker,
+                new AssignedWorkerModel { AssignedWorker = "Michelle" },
+                new AssignedWorkerModel { AssignedWorker = "Tyra" },
+                new AssignedWorkerModel { AssignedWorker = "Louise" },
+                new AssignedWorkerModel { AssignedWorker = "Angela" },
+                new AssignedWorkerModel { AssignedWorker = "Dave" },
+                new AssignedWorkerModel { AssignedWorker = "Troy" },
+                new AssignedWorkerModel { AssignedWorker = "Michael" },
+                new AssignedWorkerModel { AssignedWorker = "Manpreet" },
+                new AssignedWorkerModel { AssignedWorker = "Patrick" },
+                new AssignedWorkerModel { AssignedWorker = "None" }
+            );
+
+            context.ReferralSourceMode.AddOrUpdate(
+                s => s.ReferralSource,
+                new ReferralSourceModel { ReferralSource = "Community Agency" },
+                new ReferralSourceModel { ReferralSource = "Family/Friend" },
+                new ReferralSourceModel { ReferralSource = "Government" },
+                new ReferralSourceModel { ReferralSource = "CVAP" },
+                new ReferralSourceModel { ReferralSource = "CBVS" }
+            );
+
+            context.ReferralContactModel.AddOrUpdate(
+                s => s.ReferralContact,
+                new ReferralContactModel { ReferralContact = "PBVS" },
+                new ReferralContactModel { ReferralContact = "MCFD" },
+                new ReferralContactModel { ReferralContact = "VictimLINK" },
+                new ReferralContactModel { ReferralContact = "TH" },
+                new ReferralContactModel { ReferralContact = "Self" },
+                new ReferralContactModel { ReferralContact = "FNS" },
+                new ReferralContactModel { ReferralContact = "Other" },
+                new ReferralContactModel { ReferralContact = "Medical" }
+            );
+
+            context.IncidentModel.AddOrUpdate(
+                s => s.Incident,
+                new IncidentModel { Incident = "Abduction" },
+                new IncidentModel { Incident = "Adult Historical Sexual Assault" },
+                new IncidentModel { Incident = "Adult Sexual Assault" },
+                new IncidentModel { Incident = "Partner Assault" },
+                new IncidentModel { Incident = "Attempted Murder" },
+                new IncidentModel { Incident = "Child Physical Assault" },
+                new IncidentModel { Incident = "Child Sexual Abuse/Exploitation" },
+                new IncidentModel { Incident = "Criminal Harassment/Stalking" },
+                new IncidentModel { Incident = "Elder Abuse" },
+                new IncidentModel { Incident = "Human Trafficking" },
+                new IncidentModel { Incident = "Murder" },
+                new IncidentModel { Incident = "N/A" },
+                new IncidentModel { Incident = "Other" },
+                new IncidentModel { Incident = "Other Assault" },
+                new IncidentModel { Incident = "Other Crime - DV" },
+                new IncidentModel { Incident = "Other Familial Assault" },
+                new IncidentModel { Incident = "Threatening" },
+                new IncidentModel { Incident = "Youth Sexual Assault/Exploitation" }
+            );
+
+            context.AbuserRelationshipModel.AddOrUpdate(
+                s => s.AbuserRelationship,
+                new AbuserRelationshipModel { AbuserRelationship = "Acquaintance" },
+                new AbuserRelationshipModel { AbuserRelationship = "Bad Date" },
+                new AbuserRelationshipModel { AbuserRelationship = "DNA" },
+                new AbuserRelationshipModel { AbuserRelationship = "Ex-Partner" },
+                new AbuserRelationshipModel { AbuserRelationship = "Friend" },
+                new AbuserRelationshipModel { AbuserRelationship = "Multiple Perps" },
+                new AbuserRelationshipModel { AbuserRelationship = "N/A" },
+                new AbuserRelationshipModel { AbuserRelationship = "Other Familal" },
+                new AbuserRelationshipModel { AbuserRelationship = "Parent" },
+                new AbuserRelationshipModel { AbuserRelationship = "Partner" },
+                new AbuserRelationshipModel { AbuserRelationship = "Sibling" },
+                new AbuserRelationshipModel { AbuserRelationship = "Stranger" }
+            );
+
+            context.VictimOfIncidentModel.AddOrUpdate(
+                s => s.VictimOfIncident,
+                new VictimOfIncidentModel { VictimOfIncident = "Primary" },
+                new VictimOfIncidentModel { VictimOfIncident = "Secondary" }
+            );
+
+            context.FamilyViolenceFileModel.AddOrUpdate(
+                s => s.FamilyViolenceFile,
+                new FamilyViolenceFileModel { FamilyViolenceFile = "Yes" },
+                new FamilyViolenceFileModel { FamilyViolenceFile = "No" },
+                new FamilyViolenceFileModel { FamilyViolenceFile = "N/A" }
+            );
+
+            context.EthnicityModel.AddOrUpdate(
+                s => s.Ethnicity,
+                new EthnicityModel { Ethnicity = "Indigenous" },
+                new EthnicityModel { Ethnicity = "Asian" },
+                new EthnicityModel { Ethnicity = "Black" },
+                new EthnicityModel { Ethnicity = "Caucasian" },
+                new EthnicityModel { Ethnicity = "Declined" },
+                new EthnicityModel { Ethnicity = "Latin" },
+                new EthnicityModel { Ethnicity = "Middle Eastern" },
+                new EthnicityModel { Ethnicity = "Other" },
+                new EthnicityModel { Ethnicity = "South Asian" },
+                new EthnicityModel { Ethnicity = "South East Asian" }
+            );
+
+            context.AgeModel.AddOrUpdate(
+                s => s.Age,
+                new AgeModel { Age = "Adult <24 <65" },
+                new AgeModel { Age = "Youth >12 <19" },
+                new AgeModel { Age = "Youth >18 <25" },
+                new AgeModel { Age = "Child <13" },
+                new AgeModel { Age = "Senior >64" }
+            );
+
+            context.RepeatClientModel.AddOrUpdate(
+                s => s.RepeatClient,
+                new RepeatClientModel { RepeatClient = "Yes" },
+                new RepeatClientModel { RepeatClient = "null" }
+            );
+
+            context.DuplicateFileModel.AddOrUpdate(
+                s => s.DuplicateFile,
+                new DuplicateFileModel { DuplicateFile = "Yes" },
+                new DuplicateFileModel { DuplicateFile = "null" }
+            );
+
+            context.StatusOfFileModel.AddOrUpdate(
+                s => s.StatusOfFile,
+                new StatusOfFileModel { StatusOfFile = "Reopened" },
+                new StatusOfFileModel { StatusOfFile = "Closed" },
+                new StatusOfFileModel { StatusOfFile = "Open" }
+             );
         }
     }
 }
