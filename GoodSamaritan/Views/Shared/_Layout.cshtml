@@ -24,6 +24,35 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    @{ if (User.IsInRole("Administrator"))
+                    {
+                        <li class="custom-dropdown-header">
+                            <a>Lookup Tables</a>
+                            <ul class="custom-dropdown">
+                                <li class="custom-heading"><span>Client Entity</span></li>
+                                @* INSERT CLIENT LINKS HERE *@
+                                <li class="custom-heading"><span>Smart Entity</span></li>
+                                <li>@Html.ActionLink("Bad Date Report", "Index", "BadDateReport")</li>
+                                <li>@Html.ActionLink("City Of Assault", "Index", "CityOfAssault")</li>
+                                <li>@Html.ActionLink("City Of Residence", "Index", "CityOfResidence")</li>
+                                <li>@Html.ActionLink("Drug Facilitated Assault", "Index", "DrugFacilitatedAssault")</li>
+                                <li>@Html.ActionLink("Evidence Stored", "Index", "EvidenceStored")</li>
+                                <li>@Html.ActionLink("HIV Meds", "Index", "HIVMeds")</li>
+                                <li>@Html.ActionLink("Hospital Attended", "Index", "HospitalAttended")</li>
+                                <li>@Html.ActionLink("Medical Only", "Index", "MedicalOnly")</li>
+                                <li>@Html.ActionLink("Multiple Perpetrators", "Index", "MultiplePerpetrators")</li>
+                                <li>@Html.ActionLink("Police Attendance", "Index", "PoliceAttendance")</li>
+                                <li>@Html.ActionLink("Police Reported", "Index", "PoliceReported")</li>
+                                <li>@Html.ActionLink("Referred To CBVs", "Index", "ReferredToCBVS")</li>
+                                <li>@Html.ActionLink("Referring Hospital", "Index", "ReferringHospital")</li>
+                                <li>@Html.ActionLink("Sex Worker Exploitation", "Index", "SexWorkerExploitation")</li>
+                                <li>@Html.ActionLink("Social Work Attendance", "Index", "SocialWorkAttendance")</li>
+                                <li>@Html.ActionLink("Third Party Report", "Index", "ThirdPartyReport")</li>
+                                <li>@Html.ActionLink("Victim Services Attendance", "Index", "VictimServicesAttendance")</li>
+                            </ul>
+                        </li>
+                    }
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
