@@ -74,3 +74,14 @@ ul.nav > li:hover ul{
     border-bottom: 1px solid lightgrey;
     top: 50px;
 }
+
+.custom-dropdown > li > span {
+    display: block !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-decoration: none !important;
+    color: lightgrey !important;
+    padding: 10px !important;
+    margin-left: 0px !important;
+    background: #222222 !important;
+}
