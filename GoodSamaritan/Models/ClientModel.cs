@@ -10,6 +10,8 @@ namespace GoodSamaritan.Models
     public class ClientModel
     {
         [Key]
+        public int ClientReferenceNumber { get; set; }
+
         public FiscalYearModel FiscalYear { get; set; }
 
         [Range(1, 12, ErrorMessage = "Please enter a valid month (1 - 12)")]
@@ -31,12 +33,12 @@ namespace GoodSamaritan.Models
         public ServiceModel Service { get; set; }
         public ProgramModel Program { get; set; }
         public string RiskAssessmentAssignedTo { get; set; }
-        public RiskStatus RiskStatus { get; set; }
+        public RiskStatusModel RiskStatus { get; set; }
         public AssignedWorkerModel AssignedWorker { get; set; }
         public ReferralSourceModel ReferralSource { get; set; }
         public IncidentModel Incident { get; set; }
         public string AbuserSurnameFirstName { get; set; }
-        public AbuserRealtionshipModel AbuserRealtionship { get; set; }
+        public AbuserRelationshipModel AbuserRealtionship { get; set; }
         public VictimOfIncidentModel VictimOfIncident { get; set; }
         public FamilyViolenceFileModel FamilyViolenceFile { get; set; }
         public char Gender { get; set; }

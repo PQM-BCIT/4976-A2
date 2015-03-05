@@ -6,11 +6,12 @@ using System.Web;
 
 namespace GoodSamaritan.Models.SmartEntity
 {
-    public class ReferredToCBVS
+    public class BadDateReportModel
     {
-        // Yes; No; PVBS Only; N/A
+        // Yes; No; N/A
         [Key]
-        public string Status { get; set; }
+        public int BadDateReportId { get; set; }
+        public string BadDateReport { get; set; }
 
         public List<SmartModel> SmartEntity { get; set; }
     }

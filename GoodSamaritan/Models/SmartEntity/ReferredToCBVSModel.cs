@@ -6,11 +6,12 @@ using System.Web;
 
 namespace GoodSamaritan.Models.SmartEntity
 {
-    public class DrugFacilitatedAssault
+    public class ReferredToCBVSModel
     {
-        // Yes; No; N/A
+        // Yes; No; PVBS Only; N/A
         [Key]
-        public string Status { get; set; }
+        public int ReferredToCBVSId { get; set; }
+        public string ReferredToCBVS { get; set; }
 
         public List<SmartModel> SmartEntity { get; set; }
     }

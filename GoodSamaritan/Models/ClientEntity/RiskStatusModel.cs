@@ -6,11 +6,11 @@ using System.Web;
 
 namespace GoodSamaritan.Models
 {
-    public class RiskStatus
+    public class RiskStatusModel
     {
         [Key]
-        public int RiskId { get; set; }
-        public string RiskStats { get; set; }
+        public int RiskStatusId { get; set; }
+        public string RiskStatus { get; set; }
 
         public List<ClientModel> Client { get; set; }
     }

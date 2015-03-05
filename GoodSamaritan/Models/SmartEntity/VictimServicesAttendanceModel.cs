@@ -6,11 +6,12 @@ using System.Web;
 
 namespace GoodSamaritan.Models.SmartEntity
 {
-    public class MultiplePerpetrators
+    public class VictimServicesAttendanceModel
     {
         // Yes; No; N/A
         [Key]
-        public string Status { get; set; }
+        public int VictimServicesAttendanceId { get; set; }
+        public string VictimServicesAttendance { get; set; }
 
         public List<SmartModel> SmartEntity { get; set; }
     }

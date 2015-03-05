@@ -6,7 +6,7 @@ using System.Web;
 
 namespace GoodSamaritan.Models.ClientEntity
 {
-    public class AbuserRealtionshipModel
+    public class AbuserRelationshipModel
     {
         [Key]
         public int AbuserRelationshipId { get; set; }

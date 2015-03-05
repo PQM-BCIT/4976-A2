@@ -9,7 +9,7 @@ namespace GoodSamaritan.Models.ClientEntity
     public class FamilyViolenceFileModel
     {
         [Key]
-        public int FamilyViolenceId { get; set; }
+        public int FamilyViolenceFileId { get; set; }
         public string FamilyViolenceFile { get; set; }
 
         public List<ClientModel> Client { get; set; }

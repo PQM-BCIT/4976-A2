@@ -6,11 +6,12 @@ using System.Web;
 
 namespace GoodSamaritan.Models.SmartEntity
 {
-    public class MedicalOnly
+    public class EvidenceStoredModel
     {
         // Yes; No; N/A
         [Key]
-        public string Status { get; set; }
+        public int EvidenceStoredId { get; set; }
+        public string EvidenceStored { get; set; }
 
         public List<SmartModel> SmartEntity { get; set; }
     }
