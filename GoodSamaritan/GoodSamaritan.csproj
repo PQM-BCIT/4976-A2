@@ -199,9 +199,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\GoodSamaritanMigrations\201503050633017_Initial.cs" />
-    <Compile Include="Migrations\GoodSamaritanMigrations\201503050633017_Initial.Designer.cs">
-      <DependentUpon>201503050633017_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\GoodSamaritanMigrations\201503051740513_Initial.cs" />
+    <Compile Include="Migrations\GoodSamaritanMigrations\201503051740513_Initial.Designer.cs">
+      <DependentUpon>201503051740513_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\GoodSamaritanMigrations\Configuration.cs" />
     <Compile Include="Migrations\IdentityMigrations\201503050546138_InitialUsers.cs" />
@@ -496,8 +496,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\GoodSamaritanMigrations\201503050633017_Initial.resx">
-      <DependentUpon>201503050633017_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\GoodSamaritanMigrations\201503051740513_Initial.resx">
+      <DependentUpon>201503051740513_Initial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\IdentityMigrations\201503050546138_InitialUsers.resx">
       <DependentUpon>201503050546138_InitialUsers.cs</DependentUpon>
