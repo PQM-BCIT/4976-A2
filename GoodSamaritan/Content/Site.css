@@ -81,7 +81,9 @@ ul.nav > li:hover ul{
     overflow: hidden !important;
     text-decoration: none !important;
     color: lightgrey !important;
-    padding: 10px !important;
+    height: 100%;
+    padding: 10px;
+    vertical-align: middle;
     margin-left: 0px !important;
-    background: #222222 !important;
+    background: #4e5d6c !important;
 }
