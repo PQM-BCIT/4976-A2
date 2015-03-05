@@ -10,6 +10,7 @@ namespace GoodSamaritan.Models.SmartEntity
     {
         // Yes; No; PVBS Only; N/A
         [Key]
+        public int ReferredToCBVSId { get; set; }
         public string ReferredToCBVS { get; set; }
 
         public List<SmartModel> SmartEntity { get; set; }

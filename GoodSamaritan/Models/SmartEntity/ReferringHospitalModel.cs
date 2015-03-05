@@ -9,6 +9,7 @@ namespace GoodSamaritan.Models.SmartEntity
     public class ReferringHospitalModel
     {
         [Key]
+        public int ReferringHospitalId { get; set; }
         public string ReferringHospital { get; set; }
 
         public List<SmartModel> SmartEntity { get; set; }

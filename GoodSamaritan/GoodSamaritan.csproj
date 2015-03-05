@@ -161,13 +161,13 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\Smart\SexWorkerExploitationModelsController.cs" />
+    <Compile Include="Controllers\Smart\SexWorkerExploitationController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\GoodSamaritanMigrations\201503040827219_Initial.cs" />
-    <Compile Include="Migrations\GoodSamaritanMigrations\201503040827219_Initial.Designer.cs">
-      <DependentUpon>201503040827219_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\GoodSamaritanMigrations\201503050401289_Initialv2.cs" />
+    <Compile Include="Migrations\GoodSamaritanMigrations\201503050401289_Initialv2.Designer.cs">
+      <DependentUpon>201503050401289_Initialv2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\GoodSamaritanMigrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -270,21 +270,16 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\MultiplePerpetratorsModel\Create.cshtml" />
-    <Content Include="Views\MultiplePerpetratorsModel\Delete.cshtml" />
-    <Content Include="Views\MultiplePerpetratorsModel\Details.cshtml" />
-    <Content Include="Views\MultiplePerpetratorsModel\Edit.cshtml" />
-    <Content Include="Views\MultiplePerpetratorsModel\Index.cshtml" />
-    <Content Include="Views\DrugFacilitatedAssaultModel\Create.cshtml" />
-    <Content Include="Views\DrugFacilitatedAssaultModel\Delete.cshtml" />
-    <Content Include="Views\DrugFacilitatedAssaultModel\Details.cshtml" />
-    <Content Include="Views\DrugFacilitatedAssaultModel\Edit.cshtml" />
-    <Content Include="Views\DrugFacilitatedAssaultModel\Index.cshtml" />
     <Content Include="Views\SexWorkerExploitationModels\Create.cshtml" />
     <Content Include="Views\SexWorkerExploitationModels\Delete.cshtml" />
     <Content Include="Views\SexWorkerExploitationModels\Details.cshtml" />
     <Content Include="Views\SexWorkerExploitationModels\Edit.cshtml" />
     <Content Include="Views\SexWorkerExploitationModels\Index.cshtml" />
+    <Content Include="Views\SexWorkerExploitation\Create.cshtml" />
+    <Content Include="Views\SexWorkerExploitation\Delete.cshtml" />
+    <Content Include="Views\SexWorkerExploitation\Details.cshtml" />
+    <Content Include="Views\SexWorkerExploitation\Edit.cshtml" />
+    <Content Include="Views\SexWorkerExploitation\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -297,8 +292,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\GoodSamaritanMigrations\201503040827219_Initial.resx">
-      <DependentUpon>201503040827219_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\GoodSamaritanMigrations\201503050401289_Initialv2.resx">
+      <DependentUpon>201503050401289_Initialv2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

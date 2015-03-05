@@ -9,6 +9,7 @@ namespace GoodSamaritan.Models
     public class ServiceModel
     {
         [Key]
+        public int ServiceId { get; set; }
         public string Service { get; set; }
 
         public List<ClientModel> Client { get; set; }

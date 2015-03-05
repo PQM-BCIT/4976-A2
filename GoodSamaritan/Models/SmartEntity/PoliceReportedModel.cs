@@ -10,6 +10,7 @@ namespace GoodSamaritan.Models.SmartEntity
     {
         // Yes; No; N/A
         [Key]
+        public int PoliceReportedId { get; set; }
         public string PoliceReported { get; set; }
 
         public List<SmartModel> SmartEntity { get; set; }
