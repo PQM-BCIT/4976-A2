@@ -26,29 +26,66 @@ namespace GoodSamaritan.Models
         [RegularExpression("/^[A-Z][a-z]*$/", ErrorMessage = "Please enter a valid first name (eg. 'James')")]
         public string FirstName { get; set; }
 
+        [RegularExpression("^([0-9]{2}-[0-9]{5})$", ErrorMessage = "Please use the proper format: 99-99999")]
         public string PoliceFileNumber { get; set; }
+
+        [Range(1, int.MaxValue, ErrorMessage = "Please enter a Court File Number higher than 1")]
         public int CourtFileNumber { get; set; }
+
+        [Range(1, int.MaxValue, ErrorMessage = "Please enter a SWC File Number higher than 1")]
+        public int SwcFileNumber { get; set; }
+
         public RiskLevelModel RiskLevel { get; set; }
+
         public CrisisModel Crisis { get; set; }
+
         public ServiceModel Service { get; set; }
+
         public ProgramModel Program { get; set; }
+
+        [RegularExpression("^([a-zA-Z]+)$", ErrorMessage = "Please enter text only assessments")]
         public string RiskAssessmentAssignedTo { get; set; }
+
         public RiskStatusModel RiskStatus { get; set; }
+
         public AssignedWorkerModel AssignedWorker { get; set; }
+
         public ReferralSourceModel ReferralSource { get; set; }
+
         public IncidentModel Incident { get; set; }
-        public string AbuserSurnameFirstName { get; set; }
+
+        [RegularExpression("/^[A-Z][a-z]*$/", ErrorMessage = "Please enter a valid surname (eg. 'Smith')")]
+        public string AbuserSurnameName { get; set; }
+
+        [RegularExpression("/^[A-Z][a-z]*$/", ErrorMessage = "Please enter a valid first name (eg. 'James')")]
+        public string AbuserFirstName { get; set; }
+
         public AbuserRelationshipModel AbuserRealtionship { get; set; }
+
         public VictimOfIncidentModel VictimOfIncident { get; set; }
+
         public FamilyViolenceFileModel FamilyViolenceFile { get; set; }
+
+        [RegularExpression("^M|F|Trans$")]
         public char Gender { get; set; }
+
         public EthnicityModel Ethnicity { get; set; }
+
         public AgeModel Age { get; set; }
+
         public RepeatClientModel RepeatClient { get; set; }
+
         public DuplicateFileModel DuplicateFile { get; set; }
+
+        [Range(0, int.MaxValue, ErrorMessage = "Please enter a positive integer")]
         public int NumberOfChildren0To6 { get; set; }
+
+        [Range(0, int.MaxValue, ErrorMessage = "Please enter a positive integer")]
         public int NumberOfChildren7To12 { get; set; }
+
+        [Range(0, int.MaxValue, ErrorMessage = "Please enter a positive integer")]
         public int NumberOfChildren13To18 { get; set; }
+
         public StatusOfFileModel StatusOfFile { get; set; }
 
         [DataType(DataType.Date)]
