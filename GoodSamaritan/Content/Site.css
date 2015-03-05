@@ -47,7 +47,7 @@ ul.nav > li:hover ul{
     top: 0px;
 }
 
-.custom-dropdown > li > a:not(.custom-heading) {
+.custom-dropdown > li > a {
     display: block;
     white-space: nowrap;
     overflow: hidden;
@@ -57,7 +57,7 @@ ul.nav > li:hover ul{
     margin-left: 15px;
 }
 
-.custom-dropdown > li > a:hover:not(.custom-heading) {
+.custom-dropdown > li > a:hover {
     display: block;
     text-decoration: none;
     color: white;
@@ -75,14 +75,13 @@ ul.nav > li:hover ul{
     top: 50px;
 }
 
-a.custom-heading {
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-decoration: none;
-    color: lightgrey;
-    padding: 10px;
-    margin-left: 0px;
-    background: darkgrey;
-    border-bottom: 1px solid lightgrey;
+.custom-dropdown > li > span {
+    display: block !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-decoration: none !important;
+    color: lightgrey !important;
+    padding: 10px !important;
+    margin-left: 0px !important;
+    background: #222222 !important;
 }
