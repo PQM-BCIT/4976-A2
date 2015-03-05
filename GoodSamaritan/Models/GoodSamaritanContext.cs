@@ -10,7 +10,7 @@ namespace GoodSamaritan.Models
 {
     public class GoodSamaritanContext : DbContext
     {
-        public GoodSamaritanContext() : base("DefaultConnection")
+        public GoodSamaritanContext() : base("GoodSamaritanConnection")
         {
         }
 

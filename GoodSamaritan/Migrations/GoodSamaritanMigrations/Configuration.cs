@@ -238,7 +238,7 @@ namespace GoodSamaritan.Migrations.GoodSamaritanMigrations
 
             context.ServiceModel.AddOrUpdate(
                 s => s.Service,
-                new ServiceModel { Service ="File" },
+                new ServiceModel { Service = "File" },
                 new ServiceModel { Service = "N/A" }
             );
 

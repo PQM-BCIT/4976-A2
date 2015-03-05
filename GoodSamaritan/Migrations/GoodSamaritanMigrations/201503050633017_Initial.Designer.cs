@@ -7,13 +7,13 @@ namespace GoodSamaritan.Migrations.GoodSamaritanMigrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.1-30610")]
-    public sealed partial class Initialv2 : IMigrationMetadata
+    public sealed partial class Initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Initialv2));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "201503050401289_Initialv2"; }
+            get { return "201503050633017_Initial"; }
         }
         
         string IMigrationMetadata.Source
