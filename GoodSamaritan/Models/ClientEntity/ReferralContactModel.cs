@@ -10,6 +10,9 @@ namespace GoodSamaritan.Models.ClientEntity
     {
         [Key]
         public int ReferralContactId { get; set; }
+        [Required]
+        [MaxLength(64)]
+        [Display(Name = "Referral Contact")]
         public string ReferralContact { get; set; }
 
         public List<ClientModel> Client { get; set; }

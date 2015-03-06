@@ -10,6 +10,9 @@ namespace GoodSamaritan.Models.ClientEntity
     {
         [Key]
         public int AgeId { get; set; }
+        [Required]
+        [MaxLength(64)]
+        [Display(Name = "Age")]
         public string Age { get; set; }
 
         public List<ClientModel> Client { get; set; }

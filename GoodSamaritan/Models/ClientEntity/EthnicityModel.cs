@@ -10,6 +10,10 @@ namespace GoodSamaritan.Models.ClientEntity
     {
         [Key]
         public int EthnicityId { get; set; }
+
+        [Required]
+        [MaxLength(64)]
+        [Display(Name ="Ethnicity")]
         public string Ethnicity { get; set; }
 
         public List<ClientModel> Client { get; set; }

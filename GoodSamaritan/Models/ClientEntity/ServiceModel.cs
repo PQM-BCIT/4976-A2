@@ -10,6 +10,9 @@ namespace GoodSamaritan.Models
     {
         [Key]
         public int ServiceId { get; set; }
+        [Required]
+        [MaxLength(64)]
+        [Display(Name = "Service")]
         public string Service { get; set; }
 
         public List<ClientModel> Client { get; set; }
