@@ -4,3 +4,8 @@ sqllocaldb.exe delete v11.0
 
 update-database -ConfigurationTypeName GoodSamaritan.Migrations.GoodSamaritanMigrations.Configuration
 update-database -ConfigurationTypeName GoodSamaritan.Migrations.IdentityMigrations.Configuration
+
+add-migration -ConfigurationTypeName GoodSamaritan.Migrations.GoodSamaritanMigrations.Configuration "Initial"
+add-migration -ConfigurationTypeName GoodSamaritan.Migrations.IdentityMigrations.Configuration "Initial"
+
+Install-Package EntityFramework -IncludePrerelease
