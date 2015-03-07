@@ -510,10 +510,9 @@
     <Content Include="Views\SmartModels\Details.cshtml" />
     <Content Include="Views\SmartModels\Edit.cshtml" />
     <Content Include="Views\SmartModels\Index.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\User\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

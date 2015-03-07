@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "User Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<p>&nbsp;</p>
+
+@ViewBag.ResultMessage
+
+<div class="spacerBody">
+    <h2>Locked</h2>
+    @foreach (string s in ViewBag.Locked)
+    {
+        @s
+        <span onclick=" return confirm('Are you sure you want to unlock?') ">
+            <a href="/User/UserUnlock?UserName=@s" class="delLink">Unlock</a>
+        </span>
+        <br/>
+    }
+
+    <h2>Unlocked</h2>
+    @foreach (string s in ViewBag.Unlocked)
+    {
+        @s
+        <span onclick=" return confirm('Are you sure you want to lock?') ">
+            <a href="/User/UserLock?UserName=@s" class="delLink">Lock</a>
+        </span>
+        <br/>
+    }
+</div>
