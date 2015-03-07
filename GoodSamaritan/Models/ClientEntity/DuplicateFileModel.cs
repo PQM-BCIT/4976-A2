@@ -10,6 +10,9 @@ namespace GoodSamaritan.Models.ClientEntity
     {
         [Key]
         public int DuplicateFileId { get; set; }
+
+        [MaxLength(64)]
+        [Display(Name = "Duplicate File")]
         public string DuplicateFile { get; set; }
 
         public List<ClientModel> Client { get; set; }

@@ -10,6 +10,9 @@ namespace GoodSamaritan.Models.ClientEntity
     {
         [Key]
         public int ProgramId { get; set; }
+
+        [MaxLength(64)]
+        [Display(Name = "Program")]
         public string Program { get; set; }
 
         public List<ClientModel> Client { get; set; }

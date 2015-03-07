@@ -13,6 +13,7 @@ namespace GoodSamaritan.Migrations.GoodSamaritanMigrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
             MigrationsDirectory = @"Migrations\GoodSamaritanMigrations";
         }
 

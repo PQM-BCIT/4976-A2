@@ -11,6 +11,9 @@ namespace GoodSamaritan.Models.SmartEntity
         // Yes; No; N/A
         [Key]
         public int DrugFacilitatedAssaultId { get; set; }
+
+        [MaxLength(64)]
+        [Display(Name = "Drug Facilitated Assault")]
         public string DrugFacilitatedAssault { get; set; }
 
         public List<SmartModel> SmartEntity { get; set; }
