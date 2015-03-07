@@ -11,9 +11,9 @@ namespace GoodSamaritan.Models.SmartEntity
         // Yes; No; N/A
         [Key]
         public int BadDateReportId { get; set; }
-        [Required]
+
         [MaxLength(64)]
-        [Display(Name = "Bad Date Report")]
+        [Display(Name = "Bad Dare Report")]
         public string BadDateReport { get; set; }
 
         public List<SmartModel> SmartEntity { get; set; }

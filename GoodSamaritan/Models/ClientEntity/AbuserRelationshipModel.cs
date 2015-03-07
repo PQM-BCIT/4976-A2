@@ -10,7 +10,7 @@ namespace GoodSamaritan.Models.ClientEntity
     {
         [Key]
         public int AbuserRelationshipId { get; set; }
-        [Required]
+
         [MaxLength(64)]
         [Display(Name = "Abuser Relationship")]
         public string AbuserRelationship { get; set; }

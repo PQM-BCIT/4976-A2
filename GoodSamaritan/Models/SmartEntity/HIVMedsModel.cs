@@ -11,7 +11,7 @@ namespace GoodSamaritan.Models.SmartEntity
         // Yes; No; N/A
         [Key]
         public int HIVMedsId { get; set; }
-        [Required]
+
         [MaxLength(64)]
         [Display(Name = "HIV Meds")]
         public string HIVMeds { get; set; }

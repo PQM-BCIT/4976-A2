@@ -10,9 +10,9 @@ namespace GoodSamaritan.Models.ClientEntity
     {
         [Key]
         public int StatusOfFileId { get; set; }
-        [Required]
+
         [MaxLength(64)]
-        [Display(Name = "Status of File")]
+        [Display(Name = "Status Of File")]
         public string StatusOfFile { get; set; }
 
         public List<ClientModel> Client { get; set; }

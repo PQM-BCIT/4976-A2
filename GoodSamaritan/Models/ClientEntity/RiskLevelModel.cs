@@ -10,7 +10,7 @@ namespace GoodSamaritan.Models.ClientEntity
     {
         [Key]
         public int RiskLevelId { get; set; }
-        [Required]
+
         [MaxLength(64)]
         [Display(Name = "Risk Level")]
         public string RiskLevel { get; set; }

@@ -11,7 +11,7 @@ namespace GoodSamaritan.Models.SmartEntity
         // Yes; No; N/A
         [Key]
         public int VictimServicesAttendanceId { get; set; }
-        [Required]
+
         [MaxLength(64)]
         [Display(Name = "Victim Services Attendance")]
         public string VictimServicesAttendance { get; set; }

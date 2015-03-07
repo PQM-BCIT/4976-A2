@@ -10,7 +10,7 @@ namespace GoodSamaritan.Models.ClientEntity
     {
         [Key]
         public int ReferralSourceId { get; set; }
-        [Required]
+
         [MaxLength(64)]
         [Display(Name = "Referral Source")]
         public string ReferralSource { get; set; }

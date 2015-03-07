@@ -11,9 +11,9 @@ namespace GoodSamaritan.Models.SmartEntity
         // Yes; No; N/A
         [Key]
         public int MultiplePerpetratorsId { get; set; }
-        [Required]
+
         [MaxLength(64)]
-        [Display(Name = "Multiple Perpretrators")]
+        [Display(Name = "Multiple Perpetrators")]
         public string MultiplePerpetrators { get; set; }
 
         public List<SmartModel> SmartEntity { get; set; }
