@@ -200,14 +200,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\GoodSamaritanMigrations\201503070035544_Initial.cs" />
-    <Compile Include="Migrations\GoodSamaritanMigrations\201503070035544_Initial.Designer.cs">
-      <DependentUpon>201503070035544_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\GoodSamaritanMigrations\201503070044492_Initial.cs" />
+    <Compile Include="Migrations\GoodSamaritanMigrations\201503070044492_Initial.Designer.cs">
+      <DependentUpon>201503070044492_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\GoodSamaritanMigrations\Configuration.cs" />
-    <Compile Include="Migrations\IdentityMigrations\201503070036049_Initial.cs" />
-    <Compile Include="Migrations\IdentityMigrations\201503070036049_Initial.Designer.cs">
-      <DependentUpon>201503070036049_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\IdentityMigrations\201503070045035_Initial.cs" />
+    <Compile Include="Migrations\IdentityMigrations\201503070045035_Initial.Designer.cs">
+      <DependentUpon>201503070045035_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\IdentityMigrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -499,19 +499,19 @@
     <Content Include="Views\Role\RoleAddToUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\GoodSamaritanMigrations\201503070035544_Initial.resx">
-      <DependentUpon>201503070035544_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\IdentityMigrations\201503070036049_Initial.resx">
-      <DependentUpon>201503070036049_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\GoodSamaritanMigrations\201503070044492_Initial.resx">
+      <DependentUpon>201503070044492_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\IdentityMigrations\201503070045035_Initial.resx">
+      <DependentUpon>201503070045035_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
