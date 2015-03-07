@@ -14,17 +14,36 @@ namespace GoodSamaritan.Controllers
         // GET: User
         public ActionResult Index()
         {
-            
-            List<string> users;
+
+            List<string> lUsers;
+            List<string> uUsers;
+
+            // Display locked users
             using (var context = new ApplicationDbContext())
             {
                 var userStore = new UserStore<ApplicationUser>(context);
                 var userManager = new UserManager<ApplicationUser>(userStore);
 
-                users = (from u in userManager.Users select u.UserName).ToList();
+                lUsers = (from u in userManager.Users
+                          where u.LockoutEndDateUtc > DateTime.Now
+                          select u.UserName).ToList();
             }
 
-            return View(users);
+            // Display unlocked users
+            using (var context = new ApplicationDbContext())
+            {
+                var userStore = new UserStore<ApplicationUser>(context);
+                var userManager = new UserManager<ApplicationUser>(userStore);
+
+                uUsers = (from u in userManager.Users
+                          where u.LockoutEndDateUtc < DateTime.Now || u.LockoutEndDateUtc == null
+                          select u.UserName).ToList();
+            }
+
+            ViewBag.Locked = lUsers;
+            ViewBag.Unlocked = uUsers;
+
+            return View();
         }
 
 

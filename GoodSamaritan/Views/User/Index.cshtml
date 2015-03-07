@@ -7,21 +7,23 @@
 @ViewBag.ResultMessage
 
 <div class="spacerBody">
-    <h2>User index</h2>
-    @foreach (string s in Model)
+    <h2>Locked</h2>
+    @foreach (string s in ViewBag.Locked)
     {
-        <p>
-            @s
-            @if (s != "Administrator")
-            {
-                <span onclick=" return confirm('Are you sure you want to lock?') ">
-                    <a href="/User/UserLock?UserName=@s" class="delLink">Lock</a>
-                </span>
-                <span> | </span>
-                <span onclick=" return confirm('Are you sure you want to unlock?') ">
-                    <a href="/User/UserUnlock?UserName=@s" class="delLink">Unlock</a>
-                </span>
-            }
-        </p>
+        @s
+        <span onclick=" return confirm('Are you sure you want to unlock?') ">
+            <a href="/User/UserUnlock?UserName=@s" class="delLink">Unlock</a>
+        </span>
+        <br/>
+    }
+
+    <h2>Unlocked</h2>
+    @foreach (string s in ViewBag.Unlocked)
+    {
+        @s
+        <span onclick=" return confirm('Are you sure you want to lock?') ">
+            <a href="/User/UserLock?UserName=@s" class="delLink">Lock</a>
+        </span>
+        <br/>
     }
 </div>
