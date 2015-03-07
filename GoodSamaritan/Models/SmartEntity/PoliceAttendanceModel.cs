@@ -11,6 +11,9 @@ namespace GoodSamaritan.Models.SmartEntity
         // Yes; No; N/A
         [Key]
         public int PoliceAttendanceId { get; set; }
+        [Required]
+        [MaxLength(64)]
+        [Display(Name = "Police Attendance")]
         public string PoliceAttendance { get; set; }
 
         public List<SmartModel> SmartEntity { get; set; }
