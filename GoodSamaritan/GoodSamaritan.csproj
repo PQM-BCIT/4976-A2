@@ -498,10 +498,9 @@
     <Content Include="Views\Role\RoleCreate.cshtml" />
     <Content Include="Views\Role\RoleIndex.cshtml" />
     <Content Include="Views\Role\RoleAddToUser.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\User\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
