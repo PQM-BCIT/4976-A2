@@ -59,17 +59,25 @@ namespace GoodSamaritan.Controllers
         [Authorize(Roles = "Administrator")]
         public ActionResult RoleDelete(string roleName)
         {
-            using (var context = new ApplicationDbContext())
+            if (roleName != "Administrator")
             {
-                var roleStore = new RoleStore<IdentityRole>(context);
-                var roleManager = new RoleManager<IdentityRole>(roleStore);
-                var role = roleManager.FindByName(roleName);
+                using (var context = new ApplicationDbContext())
+                {
+                    var roleStore = new RoleStore<IdentityRole>(context);
+                    var roleManager = new RoleManager<IdentityRole>(roleStore);
+                    var role = roleManager.FindByName(roleName);
 
-                roleManager.Delete(role);
-                context.SaveChanges();
+                    roleManager.Delete(role);
+                    context.SaveChanges();
+                }
+
+                ViewBag.ResultMessage = "Role deleted succesfully !";
+            }
+            else
+            {
+                ViewBag.ResultMessage = "Administrator Role cannot be deleted !";
             }
 
-            ViewBag.ResultMessage = "Role deleted succesfully !";
             return RedirectToAction("RoleIndex", "Role");
         }
 

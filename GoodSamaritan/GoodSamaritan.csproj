@@ -197,6 +197,7 @@
     <Compile Include="Controllers\Smart\SocialWorkAttendanceController.cs" />
     <Compile Include="Controllers\Smart\ThirdPartyReportController.cs" />
     <Compile Include="Controllers\Smart\VictimServicesAttendanceController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -498,7 +499,9 @@
     <Content Include="Views\Role\RoleIndex.cshtml" />
     <Content Include="Views\Role\RoleAddToUser.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\User\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
