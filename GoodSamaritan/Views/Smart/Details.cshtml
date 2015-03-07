@@ -1,0 +1,42 @@
+﻿@model GoodSamaritan.Models.SmartEntity.SmartModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SmartModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AccompanimentMinute)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AccompanimentMinute)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberTransportsProvided)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumberTransportsProvided)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReferredToNursePractitioner)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReferredToNursePractitioner)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ClientReferenceNumber }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

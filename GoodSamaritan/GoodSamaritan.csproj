@@ -159,6 +159,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\Client\AbuserRelationshipController.cs" />
     <Compile Include="Controllers\Client\AgeController.cs" />
     <Compile Include="Controllers\Client\AssignedWorkerController.cs" />
@@ -180,6 +181,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Controllers\SmartController.cs" />
     <Compile Include="Controllers\Smart\BadDateReportController.cs" />
     <Compile Include="Controllers\Smart\CityOfAssaultController.cs" />
     <Compile Include="Controllers\Smart\CityOfResidenceController.cs" />
@@ -273,6 +275,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Doc\readme.doc" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -499,6 +502,16 @@
     <Content Include="Views\Role\RoleIndex.cshtml" />
     <Content Include="Views\Role\RoleAddToUser.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\Client\Create.cshtml" />
+    <Content Include="Views\Client\Delete.cshtml" />
+    <Content Include="Views\Client\Details.cshtml" />
+    <Content Include="Views\Client\Edit.cshtml" />
+    <Content Include="Views\Client\Index.cshtml" />
+    <Content Include="Views\Smart\Create.cshtml" />
+    <Content Include="Views\Smart\Delete.cshtml" />
+    <Content Include="Views\Smart\Details.cshtml" />
+    <Content Include="Views\Smart\Edit.cshtml" />
+    <Content Include="Views\Smart\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
