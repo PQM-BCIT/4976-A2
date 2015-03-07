@@ -159,6 +159,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ClientModelsController.cs" />
     <Compile Include="Controllers\Client\AbuserRelationshipController.cs" />
     <Compile Include="Controllers\Client\AgeController.cs" />
     <Compile Include="Controllers\Client\AssignedWorkerController.cs" />
@@ -201,14 +202,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\GoodSamaritanMigrations\201503070044492_Initial.cs" />
-    <Compile Include="Migrations\GoodSamaritanMigrations\201503070044492_Initial.Designer.cs">
-      <DependentUpon>201503070044492_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\GoodSamaritanMigrations\201503070247012_Initial.cs" />
+    <Compile Include="Migrations\GoodSamaritanMigrations\201503070247012_Initial.Designer.cs">
+      <DependentUpon>201503070247012_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\GoodSamaritanMigrations\Configuration.cs" />
-    <Compile Include="Migrations\IdentityMigrations\201503070045035_Initial.cs" />
-    <Compile Include="Migrations\IdentityMigrations\201503070045035_Initial.Designer.cs">
-      <DependentUpon>201503070045035_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\IdentityMigrations\201503070247125_Initial.cs" />
+    <Compile Include="Migrations\IdentityMigrations\201503070247125_Initial.Designer.cs">
+      <DependentUpon>201503070247125_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\IdentityMigrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -498,6 +499,11 @@
     <Content Include="Views\Role\RoleCreate.cshtml" />
     <Content Include="Views\Role\RoleIndex.cshtml" />
     <Content Include="Views\Role\RoleAddToUser.cshtml" />
+    <Content Include="Views\ClientModels\Create.cshtml" />
+    <Content Include="Views\ClientModels\Delete.cshtml" />
+    <Content Include="Views\ClientModels\Details.cshtml" />
+    <Content Include="Views\ClientModels\Edit.cshtml" />
+    <Content Include="Views\ClientModels\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\User\" />
@@ -510,11 +516,11 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\GoodSamaritanMigrations\201503070044492_Initial.resx">
-      <DependentUpon>201503070044492_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\GoodSamaritanMigrations\201503070247012_Initial.resx">
+      <DependentUpon>201503070247012_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\IdentityMigrations\201503070045035_Initial.resx">
-      <DependentUpon>201503070045035_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\IdentityMigrations\201503070247125_Initial.resx">
+      <DependentUpon>201503070247125_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
