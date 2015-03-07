@@ -10,7 +10,7 @@ namespace GoodSamaritan.Models.SmartEntity
     {
         [Key]
         public int HospitalAttendedId { get; set; }
-        [Required]
+
         [MaxLength(64)]
         [Display(Name = "Hospital Attended")]
         public string HospitalAttended { get; set; }

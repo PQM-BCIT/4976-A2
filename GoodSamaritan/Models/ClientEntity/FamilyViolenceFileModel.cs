@@ -10,7 +10,7 @@ namespace GoodSamaritan.Models.ClientEntity
     {
         [Key]
         public int FamilyViolenceFileId { get; set; }
-        [Required]
+
         [MaxLength(64)]
         [Display(Name = "Family Violence File")]
         public string FamilyViolenceFile { get; set; }

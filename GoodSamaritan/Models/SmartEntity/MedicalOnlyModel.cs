@@ -11,7 +11,7 @@ namespace GoodSamaritan.Models.SmartEntity
         // Yes; No; N/A
         [Key]
         public int MedicalOnlyId { get; set; }
-        [Required]
+
         [MaxLength(64)]
         [Display(Name = "Medical Only")]
         public string MedicalOnly { get; set; }

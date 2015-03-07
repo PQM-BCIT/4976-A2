@@ -10,7 +10,7 @@ namespace GoodSamaritan.Models
     {
         [Key]
         public int AssignedWorkerId { get; set; }
-        [Required]
+
         [MaxLength(64)]
         [Display(Name = "Assigned Worker")]
         public string AssignedWorker { get; set; }

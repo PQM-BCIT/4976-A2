@@ -10,9 +10,9 @@ namespace GoodSamaritan.Models.SmartEntity
     {
         [Key]
         public int ReferringHospitalId { get; set; }
-        [Required]
+
         [MaxLength(64)]
-        [Display(Name = "Refferring Hospital")]
+        [Display(Name = "Referring Hospital")]
         public string ReferringHospital { get; set; }
 
         public List<SmartModel> SmartEntity { get; set; }

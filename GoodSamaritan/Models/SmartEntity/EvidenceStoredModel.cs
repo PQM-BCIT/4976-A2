@@ -11,7 +11,7 @@ namespace GoodSamaritan.Models.SmartEntity
         // Yes; No; N/A
         [Key]
         public int EvidenceStoredId { get; set; }
-        [Required]
+
         [MaxLength(64)]
         [Display(Name = "Evidence Stored")]
         public string EvidenceStored { get; set; }
