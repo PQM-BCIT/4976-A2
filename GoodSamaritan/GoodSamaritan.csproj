@@ -179,6 +179,7 @@
     <Compile Include="Controllers\Client\VictimOfIncidentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\Smart\BadDateReportController.cs" />
     <Compile Include="Controllers\Smart\CityOfAssaultController.cs" />
     <Compile Include="Controllers\Smart\CityOfResidenceController.cs" />
@@ -493,6 +494,9 @@
     <Content Include="Views\VictimOfIncident\Details.cshtml" />
     <Content Include="Views\VictimOfIncident\Edit.cshtml" />
     <Content Include="Views\VictimOfIncident\Index.cshtml" />
+    <Content Include="Views\Role\RoleCreate.cshtml" />
+    <Content Include="Views\Role\RoleIndex.cshtml" />
+    <Content Include="Views\Role\RoleAddToUser.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
