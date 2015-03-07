@@ -203,22 +203,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\GoodSamaritanMigrations\201503070247012_Initial.cs" />
-    <Compile Include="Migrations\GoodSamaritanMigrations\201503070247012_Initial.Designer.cs">
-      <DependentUpon>201503070247012_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\GoodSamaritanMigrations\201503070313509_Initial1.cs" />
-    <Compile Include="Migrations\GoodSamaritanMigrations\201503070313509_Initial1.Designer.cs">
-      <DependentUpon>201503070313509_Initial1.cs</DependentUpon>
+    <Compile Include="Migrations\GoodSamaritanMigrations\201503070318282_Initial.cs" />
+    <Compile Include="Migrations\GoodSamaritanMigrations\201503070318282_Initial.Designer.cs">
+      <DependentUpon>201503070318282_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\GoodSamaritanMigrations\Configuration.cs" />
-    <Compile Include="Migrations\IdentityMigrations\201503070247125_Initial.cs" />
-    <Compile Include="Migrations\IdentityMigrations\201503070247125_Initial.Designer.cs">
-      <DependentUpon>201503070247125_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\IdentityMigrations\201503070314048_Initial1.cs" />
-    <Compile Include="Migrations\IdentityMigrations\201503070314048_Initial1.Designer.cs">
-      <DependentUpon>201503070314048_Initial1.cs</DependentUpon>
+    <Compile Include="Migrations\IdentityMigrations\201503070318328_Initial.cs" />
+    <Compile Include="Migrations\IdentityMigrations\201503070318328_Initial.Designer.cs">
+      <DependentUpon>201503070318328_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\IdentityMigrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -530,17 +522,11 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\GoodSamaritanMigrations\201503070247012_Initial.resx">
-      <DependentUpon>201503070247012_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\GoodSamaritanMigrations\201503070318282_Initial.resx">
+      <DependentUpon>201503070318282_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\GoodSamaritanMigrations\201503070313509_Initial1.resx">
-      <DependentUpon>201503070313509_Initial1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\IdentityMigrations\201503070247125_Initial.resx">
-      <DependentUpon>201503070247125_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\IdentityMigrations\201503070314048_Initial1.resx">
-      <DependentUpon>201503070314048_Initial1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\IdentityMigrations\201503070318328_Initial.resx">
+      <DependentUpon>201503070318328_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
