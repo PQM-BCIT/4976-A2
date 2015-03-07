@@ -14,8 +14,8 @@
 
         <div class="message-success">@ViewBag.ResultMessage</div>
         <p>
-            Username : @Html.DropDownList("UserName", ViewBag.Users as SelectList)
-            Role Name: @Html.DropDownList("RoleName", ViewBag.Roles as SelectList)
+            Username : <span style="color: #4e5d6c;">@Html.DropDownList("UserName", ViewBag.Users as SelectList)</span>
+            Role Name: <span style="color: #4e5d6c;">@Html.DropDownList("RoleName", ViewBag.Roles as SelectList)</span>
         </p>
 
         <input type="submit" value="Save" />
@@ -28,8 +28,8 @@
         @Html.ValidationSummary(true)
 
         <p>
-            Username : @Html.DropDownList("UserName", ViewBag.Users as SelectList)
-            Role Name: @Html.DropDownList("RoleName", ViewBag.Roles as SelectList)
+            Username : <span style="color: #4e5d6c;">@Html.DropDownList("UserName", ViewBag.Users as SelectList)</span>
+            Role Name: <span style="color: #4e5d6c;">@Html.DropDownList("RoleName", ViewBag.Roles as SelectList)</span>
         </p>
 
         <input type="submit" value="Delete this user from Role" />
@@ -40,7 +40,7 @@
     {
         @Html.AntiForgeryToken()
         <p>
-            Username : @Html.DropDownList("UserName", ViewBag.Users as SelectList)
+            Username : <span style="color: #4e5d6c;">@Html.DropDownList("UserName", ViewBag.Users as SelectList)</span>
             <input type="submit" value="Get Roles for this User" />
         </p>
     }

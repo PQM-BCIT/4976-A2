@@ -59,6 +59,7 @@ namespace GoodSamaritan.Controllers
         [Authorize(Roles = "Administrator")]
         public ActionResult RoleDelete(string roleName)
         {
+            // Checks if administrator is being deleted, if so, do not allow.
             if (roleName != "Administrator")
             {
                 using (var context = new ApplicationDbContext())
@@ -212,16 +213,35 @@ namespace GoodSamaritan.Controllers
                 if (user == null)
                     throw new Exception("User not found!");
 
-                if (userManager.IsInRole(user.Id, roleName))
+                if (roleName == "Administrator")
                 {
-                    userManager.RemoveFromRole(user.Id, roleName);
-                    context.SaveChanges();
+                    var numOfAdmins = roleManager.FindByName("Administrator").Users.Count();
 
-                    ViewBag.ResultMessage = "Role removed from this user successfully !";
+                    if (numOfAdmins > 1 && userManager.IsInRole(user.Id, roleName))
+                    {
+                        userManager.RemoveFromRole(user.Id, roleName);
+                        context.SaveChanges();
+
+                        ViewBag.ResultMessage = "Role removed from this user successfully !";
+                    }
+                    else
+                    {
+                        ViewBag.ResultMessage = "User cannot be removed from role as there must be at least 1 at all times !";
+                    }
                 }
                 else
                 {
-                    ViewBag.ResultMessage = "This user doesn't belong to selected role.";
+                    if (userManager.IsInRole(user.Id, roleName))
+                    {
+                        userManager.RemoveFromRole(user.Id, roleName);
+                        context.SaveChanges();
+
+                        ViewBag.ResultMessage = "Role removed from this user successfully !";
+                    }
+                    else
+                    {
+                        ViewBag.ResultMessage = "This user doesn't belong to selected role.";
+                    }
                 }
 
                 var userRoleIds = (from r in user.Roles select r.RoleId);
