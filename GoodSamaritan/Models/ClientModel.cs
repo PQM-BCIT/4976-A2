@@ -25,11 +25,11 @@ namespace GoodSamaritan.Models
         public int Day { get; set; }
 
         [Display(Name = "Surname")]
-        [RegularExpression("/^[A-Z][a-z]*$/", ErrorMessage = "Please enter a valid surname (eg. 'Smith')")]
+        [RegularExpression("^[A-Za-z]*$", ErrorMessage = "Please enter a valid surname (eg. 'Smith')")]
         public string Surname { get; set; }
 
         [Display(Name = "First Name")]
-        [RegularExpression("/^[A-Z][a-z]*$/", ErrorMessage = "Please enter a valid first name (eg. 'James')")]
+        [RegularExpression("^[A-Za-z]*$", ErrorMessage = "Please enter a valid first name (eg. 'James')")]
         public string FirstName { get; set; }
 
         [Display(Name = "Police File Number")]
@@ -89,11 +89,11 @@ namespace GoodSamaritan.Models
         public IncidentModel Incident { get; set; }
 
         [Display(Name = "Abuser Surname")]
-        [RegularExpression("/^[A-Z][a-z]*$/", ErrorMessage = "Please enter a valid surname (eg. 'Smith')")]
+        [RegularExpression("^[A-Za-z]*$", ErrorMessage = "Please enter a valid surname (eg. 'Smith')")]
         public string AbuserSurnameName { get; set; }
 
         [Display(Name = "Abuser First Name")]
-        [RegularExpression("/^[A-Z][a-z]*$/", ErrorMessage = "Please enter a valid first name (eg. 'James')")]
+        [RegularExpression("^[A-Za-z]*$", ErrorMessage = "Please enter a valid first name (eg. 'James')")]
         public string AbuserFirstName { get; set; }
 
         [Display(Name = "Abuser Relationship")]
