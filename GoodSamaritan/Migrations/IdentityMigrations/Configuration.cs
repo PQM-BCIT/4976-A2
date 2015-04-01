@@ -12,7 +12,7 @@ namespace GoodSamaritan.Migrations.IdentityMigrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
             MigrationsDirectory = @"Migrations\IdentityMigrations";
         }
 
