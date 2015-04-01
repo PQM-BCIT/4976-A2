@@ -26,6 +26,7 @@
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     @{ if (User.IsInRole("Administrator"))
                      {
+                        <li>@Html.ActionLink("Manage Clients", "Index", "Client")</li>
                         <li>@Html.ActionLink("Manage Roles", "RoleIndex", "Role")</li>
                         <li>@Html.ActionLink("Manage Users", "Index", "User")</li>
                         <li class="custom-dropdown-header">

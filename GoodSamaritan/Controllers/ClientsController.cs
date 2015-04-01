@@ -10,18 +10,18 @@ using GoodSamaritan.Models;
 
 namespace GoodSamaritan.Controllers
 {
-    public class ClientModelsController : Controller
+    public class ClientsController : Controller
     {
         private GoodSamaritanContext db = new GoodSamaritanContext();
 
-        // GET: ClientModels
+        // GET: Clients
         public ActionResult Index()
         {
             var clientModel = db.ClientModel.Include(c => c.AbuserRealtionship).Include(c => c.Age).Include(c => c.AssignedWorker).Include(c => c.Crisis).Include(c => c.DuplicateFile).Include(c => c.Ethnicity).Include(c => c.FamilyViolenceFile).Include(c => c.FiscalYear).Include(c => c.Incident).Include(c => c.Program).Include(c => c.ReferralSource).Include(c => c.RepeatClient).Include(c => c.RiskLevel).Include(c => c.RiskStatus).Include(c => c.Service).Include(c => c.StatusOfFile).Include(c => c.VictimOfIncident);
             return View(clientModel.ToList());
         }
 
-        // GET: ClientModels/Details/5
+        // GET: Clients/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,7 +36,7 @@ namespace GoodSamaritan.Controllers
             return View(clientModel);
         }
 
-        // GET: ClientModels/Create
+        // GET: Clients/Create
         public ActionResult Create()
         {
             ViewBag.AbuserRelationshipId = new SelectList(db.AbuserRelationshipModel, "AbuserRelationshipId", "AbuserRelationship");
@@ -59,7 +59,7 @@ namespace GoodSamaritan.Controllers
             return View();
         }
 
-        // POST: ClientModels/Create
+        // POST: Clients/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -93,7 +93,7 @@ namespace GoodSamaritan.Controllers
             return View(clientModel);
         }
 
-        // GET: ClientModels/Edit/5
+        // GET: Clients/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -125,7 +125,7 @@ namespace GoodSamaritan.Controllers
             return View(clientModel);
         }
 
-        // POST: ClientModels/Edit/5
+        // POST: Clients/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -158,7 +158,7 @@ namespace GoodSamaritan.Controllers
             return View(clientModel);
         }
 
-        // GET: ClientModels/Delete/5
+        // GET: Clients/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -173,7 +173,7 @@ namespace GoodSamaritan.Controllers
             return View(clientModel);
         }
 
-        // POST: ClientModels/Delete/5
+        // POST: Clients/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
