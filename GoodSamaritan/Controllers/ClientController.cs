@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
@@ -14,21 +15,30 @@ namespace GoodSamaritan.Controllers
     {
         private GoodSamaritanContext db = new GoodSamaritanContext();
 
-        // GET: ClientModels
-        public ActionResult Index()
+        // GET: Client
+        public async Task<ActionResult> Index()
         {
+            if (!User.IsInRole("Worker") && !User.IsInRole("Administrator"))
+            {
+                return null;
+            }
+
             var clientModel = db.ClientModel.Include(c => c.AbuserRealtionship).Include(c => c.Age).Include(c => c.AssignedWorker).Include(c => c.Crisis).Include(c => c.DuplicateFile).Include(c => c.Ethnicity).Include(c => c.FamilyViolenceFile).Include(c => c.FiscalYear).Include(c => c.Incident).Include(c => c.Program).Include(c => c.ReferralSource).Include(c => c.RepeatClient).Include(c => c.RiskLevel).Include(c => c.RiskStatus).Include(c => c.Service).Include(c => c.StatusOfFile).Include(c => c.VictimOfIncident);
-            return View(clientModel.ToList());
+            return View(await clientModel.ToListAsync());
         }
 
-        // GET: ClientModels/Details/5
-        public ActionResult Details(int? id)
+        // GET: Client/Details/5
+        public async Task<ActionResult> Details(int? id)
         {
+            if (!User.IsInRole("Worker") && !User.IsInRole("Administrator"))
+            {
+                return null;
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ClientModel clientModel = db.ClientModel.Find(id);
+            ClientModel clientModel = await db.ClientModel.FindAsync(id);
             if (clientModel == null)
             {
                 return HttpNotFound();
@@ -36,9 +46,13 @@ namespace GoodSamaritan.Controllers
             return View(clientModel);
         }
 
-        // GET: ClientModels/Create
+        // GET: Client/Create
         public ActionResult Create()
         {
+            if (!User.IsInRole("Worker") && !User.IsInRole("Administrator"))
+            {
+                return null;
+            }
             ViewBag.AbuserRelationshipId = new SelectList(db.AbuserRelationshipModel, "AbuserRelationshipId", "AbuserRelationship");
             ViewBag.AgeId = new SelectList(db.AgeModel, "AgeId", "Age");
             ViewBag.AssignedWorkerId = new SelectList(db.AssignedWorkerModel, "AssignedWorkerId", "AssignedWorker");
@@ -59,17 +73,21 @@ namespace GoodSamaritan.Controllers
             return View();
         }
 
-        // POST: ClientModels/Create
+        // POST: Client/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ClientReferenceNumber,FiscalYearId,Month,Day,Surname,FirstName,PoliceFileNumber,CourtFileNumber,SwcFileNumber,RiskLevelId,CrisisId,ServiceId,ProgramId,RiskAssessmentAssignedTo,RiskStatusId,AssignedWorkerId,ReferralSourceId,IncidentId,AbuserSurnameName,AbuserFirstName,AbuserRelationshipId,VictimOfIncidentId,FamilyViolenceFileId,EthnicityId,AgeId,RepeatClientId,DuplicateFileId,NumberOfChildren0To6,NumberOfChildren7To12,NumberOfChildren13To18,StatusOfFileId,DateLastTransferred,DateClosed,DateReOpened")] ClientModel clientModel)
+        public async Task<ActionResult> Create([Bind(Include = "ClientReferenceNumber,FiscalYearId,Month,Day,Surname,FirstName,PoliceFileNumber,CourtFileNumber,SwcFileNumber,RiskLevelId,CrisisId,ServiceId,ProgramId,RiskAssessmentAssignedTo,RiskStatusId,AssignedWorkerId,ReferralSourceId,IncidentId,AbuserSurnameName,AbuserFirstName,AbuserRelationshipId,VictimOfIncidentId,FamilyViolenceFileId,EthnicityId,AgeId,RepeatClientId,DuplicateFileId,NumberOfChildren0To6,NumberOfChildren7To12,NumberOfChildren13To18,StatusOfFileId,DateLastTransferred,DateClosed,DateReOpened")] ClientModel clientModel)
         {
+            if (!User.IsInRole("Worker") && !User.IsInRole("Administrator"))
+            {
+                return null;
+            }
             if (ModelState.IsValid)
             {
                 db.ClientModel.Add(clientModel);
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
@@ -93,14 +111,18 @@ namespace GoodSamaritan.Controllers
             return View(clientModel);
         }
 
-        // GET: ClientModels/Edit/5
-        public ActionResult Edit(int? id)
+        // GET: Client/Edit/5
+        public async Task<ActionResult> Edit(int? id)
         {
+            if (!User.IsInRole("Worker") && !User.IsInRole("Administrator"))
+            {
+                return null;
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ClientModel clientModel = db.ClientModel.Find(id);
+            ClientModel clientModel = await db.ClientModel.FindAsync(id);
             if (clientModel == null)
             {
                 return HttpNotFound();
@@ -125,17 +147,21 @@ namespace GoodSamaritan.Controllers
             return View(clientModel);
         }
 
-        // POST: ClientModels/Edit/5
+        // POST: Client/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ClientReferenceNumber,FiscalYearId,Month,Day,Surname,FirstName,PoliceFileNumber,CourtFileNumber,SwcFileNumber,RiskLevelId,CrisisId,ServiceId,ProgramId,RiskAssessmentAssignedTo,RiskStatusId,AssignedWorkerId,ReferralSourceId,IncidentId,AbuserSurnameName,AbuserFirstName,AbuserRelationshipId,VictimOfIncidentId,FamilyViolenceFileId,EthnicityId,AgeId,RepeatClientId,DuplicateFileId,NumberOfChildren0To6,NumberOfChildren7To12,NumberOfChildren13To18,StatusOfFileId,DateLastTransferred,DateClosed,DateReOpened")] ClientModel clientModel)
+        public async Task<ActionResult> Edit([Bind(Include = "ClientReferenceNumber,FiscalYearId,Month,Day,Surname,FirstName,PoliceFileNumber,CourtFileNumber,SwcFileNumber,RiskLevelId,CrisisId,ServiceId,ProgramId,RiskAssessmentAssignedTo,RiskStatusId,AssignedWorkerId,ReferralSourceId,IncidentId,AbuserSurnameName,AbuserFirstName,AbuserRelationshipId,VictimOfIncidentId,FamilyViolenceFileId,EthnicityId,AgeId,RepeatClientId,DuplicateFileId,NumberOfChildren0To6,NumberOfChildren7To12,NumberOfChildren13To18,StatusOfFileId,DateLastTransferred,DateClosed,DateReOpened")] ClientModel clientModel)
         {
+            if (!User.IsInRole("Worker") && !User.IsInRole("Administrator"))
+            {
+                return null;
+            }
             if (ModelState.IsValid)
             {
                 db.Entry(clientModel).State = EntityState.Modified;
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
             ViewBag.AbuserRelationshipId = new SelectList(db.AbuserRelationshipModel, "AbuserRelationshipId", "AbuserRelationship", clientModel.AbuserRelationshipId);
@@ -158,14 +184,18 @@ namespace GoodSamaritan.Controllers
             return View(clientModel);
         }
 
-        // GET: ClientModels/Delete/5
-        public ActionResult Delete(int? id)
+        // GET: Client/Delete/5
+        public async Task<ActionResult> Delete(int? id)
         {
+            if (!User.IsInRole("Worker") && !User.IsInRole("Administrator"))
+            {
+                return null;
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ClientModel clientModel = db.ClientModel.Find(id);
+            ClientModel clientModel = await db.ClientModel.FindAsync(id);
             if (clientModel == null)
             {
                 return HttpNotFound();
@@ -173,14 +203,18 @@ namespace GoodSamaritan.Controllers
             return View(clientModel);
         }
 
-        // POST: ClientModels/Delete/5
+        // POST: Client/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            ClientModel clientModel = db.ClientModel.Find(id);
+            if (!User.IsInRole("Worker") && !User.IsInRole("Administrator"))
+            {
+                return null;
+            }
+            ClientModel clientModel = await db.ClientModel.FindAsync(id);
             db.ClientModel.Remove(clientModel);
-            db.SaveChanges();
+            await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 
