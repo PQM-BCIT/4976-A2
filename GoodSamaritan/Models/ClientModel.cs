@@ -23,13 +23,13 @@ namespace GoodSamaritan.Models
         [Range(1, 31, ErrorMessage = "Please enter a valid date (1-31)")]
         public int Day { get; set; }
 
-        [RegularExpression("/^[A-Z][a-z]*$/", ErrorMessage = "Please enter a valid surname (eg. 'Smith')")]
+        [RegularExpression(@"^[A-Z][a-z]*$", ErrorMessage = "Please enter a valid surname (eg. 'Smith')")]
         public string Surname { get; set; }
 
-        [RegularExpression("/^[A-Z][a-z]*$/", ErrorMessage = "Please enter a valid first name (eg. 'James')")]
+        [RegularExpression(@"^[A-Z][a-z]*$", ErrorMessage = "Please enter a valid first name (eg. 'James')")]
         public string FirstName { get; set; }
 
-        [RegularExpression("^([0-9]{2}-[0-9]{5})$", ErrorMessage = "Please use the proper format: 99-99999")]
+        [RegularExpression(@"^([0-9]{2}-[0-9]{5})$", ErrorMessage = "Please use the proper format: 99-99999")]
         public string PoliceFileNumber { get; set; }
 
         [Range(1, int.MaxValue, ErrorMessage = "Please enter a Court File Number higher than 1")]
@@ -54,7 +54,7 @@ namespace GoodSamaritan.Models
         public int ProgramId { get; set; }
         public ProgramModel Program { get; set; }
 
-        [RegularExpression("^([a-zA-Z]+)$", ErrorMessage = "Please enter text only assessments")]
+        [RegularExpression(@"^([a-zA-Z]+)$", ErrorMessage = "Please enter text only assessments")]
         public string RiskAssessmentAssignedTo { get; set; }
 
         [ForeignKey("RiskStatus")]
@@ -73,10 +73,10 @@ namespace GoodSamaritan.Models
         public int IncidentId { get; set; }
         public IncidentModel Incident { get; set; }
 
-        [RegularExpression("/^[A-Z][a-z]*$/", ErrorMessage = "Please enter a valid surname (eg. 'Smith')")]
+        [RegularExpression(@"^[A-Z][a-z]*$", ErrorMessage = "Please enter a valid surname (eg. 'Smith')")]
         public string AbuserSurnameName { get; set; }
 
-        [RegularExpression("/^[A-Z][a-z]*$/", ErrorMessage = "Please enter a valid first name (eg. 'James')")]
+        [RegularExpression(@"^[A-Z][a-z]*$", ErrorMessage = "Please enter a valid first name (eg. 'James')")]
         public string AbuserFirstName { get; set; }
 
         [ForeignKey("AbuserRealtionship")]
