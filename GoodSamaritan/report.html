@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html ng-app="reportModule">
+<head>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <script src="Report/ReportController.js"></script>
+    <!--<link href="style.css" rel="stylesheet" />-->
+</head>
+<body>
+    <div ng-controller="ReportController">
+        <h1>{{ message }}</h1>
+
+        <button ng-click="getClients()">Get Clients</button>
+
+        <table>
+            <tr ng-repeat="c in clients">
+                <td>{{ c.FiscalYearId }}</td>
+                <td>{{ c.Month }}</td>
+                <td>{{ c.Day }}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

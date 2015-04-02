@@ -13,6 +13,10 @@ namespace GoodSamaritan
             var cors = new EnableCorsAttribute("*", "*", "*");
             config.EnableCors(cors);
 
+            var json = config.Formatters.JsonFormatter;
+            json.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.Objects;
+            config.Formatters.Remove(config.Formatters.XmlFormatter);
+
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
