@@ -91,7 +91,7 @@ namespace GoodSamaritan.Models
         public int FamilyViolenceFileId { get; set; }
         public FamilyViolenceFileModel FamilyViolenceFile { get; set; }
 
-        [RegularExpression("^M|F|Trans$")]
+        [RegularExpression(@"^M|F|Trans$")]
         public char Gender { get; set; }
 
         [ForeignKey("Ethnicity")]
