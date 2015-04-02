@@ -9,6 +9,7 @@ namespace GoodSamaritan.Models.ClientEntity
     public class FiscalYearModel
     {
         [Key]
+        [Display(Name = "Fiscal Yearsssss")]
         public int FiscalYearId { get; set; }
 
         [MaxLength(64)]
