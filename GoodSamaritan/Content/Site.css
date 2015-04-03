@@ -107,3 +107,7 @@ ul.nav > li:hover ul{
     width: 150px;
     margin: 5px;
 }
+
+.report-table {
+    padding:5px;
+}

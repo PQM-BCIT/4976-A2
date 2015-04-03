@@ -10,6 +10,7 @@
 </head>
 <body>
     <div ng-controller="ReportController">
+
         <h1>{{ message }}</h1>
 
         <div class="custom-select">
@@ -34,19 +35,115 @@
             </select>
         </div>
         <button ng-click="getClients()" class="custom-button">Get Clients</button>
+        
+        <div class="report-table">
+            <table class="table">
+                <tr>
+                    <th>Fiscal Year</th>
+                    <th>Month</th>
+                    <th>Day</th>
+                </tr>
+                <tr ng-repeat="c in clients">
+                    <td>{{ c.FiscalYearId }}</td>
+                    <td>{{ c.Month }}</td>
+                    <td>{{ c.Day }}</td>
+                </tr>
+            </table>
 
-        <table class="table">
-            <tr>
-                <th>Fiscal Year</th>
-                <th>Month</th>
-                <th>Day</th>
-            </tr>
-            <tr ng-repeat="c in clients">
-                <td>{{ c.FiscalYearId }}</td>
-                <td>{{ c.Month }}</td>
-                <td>{{ c.Day }}</td>
-            </tr>
-        </table>
+            <h3>Report... WIP</h3>
+            <table>
+                <tr>
+                    <th style="width:100px;">Status</th>
+                    <td style="width:100px;">Open</td>
+                    <td>{{ open }}</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>Closed</td>
+                    <td>{{ closed }}</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>Reopened</td>
+                    <td>{{ reopened }}</td>
+                </tr>
+
+                <tr><td>&nbsp;</td></tr>
+
+                <tr>
+                    <th>Program</th>
+                    <td>Crisis</td>
+                    <td>{{ crisis }}</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>Court</td>
+                    <td>{{ court }}</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>Smart</td>
+                    <td>{{ smart }}</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>DVU</td>
+                    <td>{{ dvu }}</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>MCFD</td>
+                    <td>{{ mcfd }}</td>
+                </tr>
+
+                <tr><td>&nbsp;</td></tr>
+
+                <tr>
+                    <th>Gender</th>
+                    <td>Female</td>
+                    <td>{{ female }}</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>Male</td>
+                    <td>{{ male }}</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>Trans</td>
+                    <td>{{ trans }}</td>
+                </tr>
+
+                <tr><td>&nbsp;</td></tr>
+
+                <tr>
+                    <th>Age</th>
+                    <td>Adult > 24 < 65</td>
+                    <td>{{ adult }}</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>Youth > 18 < 25</td>
+                    <td>{{ youth1 }}</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>Youth > 12 < 19</td>
+                    <td>{{ youth2 }}</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>Child</td>
+                    <td>{{ child }}</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>Senior</td>
+                    <td>{{ senior }}</td>
+                </tr>
+            </table>
+        </div>
+
     </div>
 </body>
 </html>
