@@ -14,7 +14,6 @@ namespace GoodSamaritan.Models
         public int ClientReferenceNumber { get; set; }
 
         [Display(Name = "Fiscal Year")]
-        [ForeignKey("FiscalYear")]
         public int FiscalYearId { get; set; }
         public FiscalYearModel FiscalYear { get; set; }
 
@@ -45,22 +44,18 @@ namespace GoodSamaritan.Models
         public int SwcFileNumber { get; set; }
 
         [Display(Name = "Risk Level")]
-        [ForeignKey("RiskLevel")]
         public int RiskLevelId { get; set; }
         public RiskLevelModel RiskLevel { get; set; }
 
         [Display(Name = "Crisis")]
-        [ForeignKey("Crisis")]
         public int CrisisId { get; set; }
         public CrisisModel Crisis { get; set; }
 
         [Display(Name = "Service")]
-        [ForeignKey("Service")]
         public int ServiceId { get; set; }
         public ServiceModel Service { get; set; }
 
         [Display(Name = "Program")]
-        [ForeignKey("Program")]
         public int ProgramId { get; set; }
         public ProgramModel Program { get; set; }
 
@@ -69,22 +64,18 @@ namespace GoodSamaritan.Models
         public string RiskAssessmentAssignedTo { get; set; }
 
         [Display(Name = "Risk Status")]
-        [ForeignKey("RiskStatus")]
         public int RiskStatusId { get; set; }
         public RiskStatusModel RiskStatus { get; set; }
 
         [Display(Name = "Assigned Worker")]
-        [ForeignKey("AssignedWorker")]
         public int AssignedWorkerId { get; set; }
         public AssignedWorkerModel AssignedWorker { get; set; }
 
         [Display(Name = "Referral Source")]
-        [ForeignKey("ReferralSource")]
         public int ReferralSourceId { get; set; }
         public ReferralSourceModel ReferralSource { get; set; }
 
         [Display(Name = "Incident")]
-        [ForeignKey("IncidentModel")]
         public int IncidentId { get; set; }
         public IncidentModel Incident { get; set; }
 
@@ -97,17 +88,14 @@ namespace GoodSamaritan.Models
         public string AbuserFirstName { get; set; }
 
         [Display(Name = "Abuser Relationship")]
-        [ForeignKey("AbuserRelationship")]
         public int AbuserRelationshipId { get; set; }
         public AbuserRelationshipModel AbuserRealtionship { get; set; }
 
         [Display(Name = "Victim of Incident")]
-        [ForeignKey("VictimOfIncident")]
         public int VictimOfIncidentId { get; set; }
         public VictimOfIncidentModel VictimOfIncident { get; set; }
 
         [Display(Name = "Family Violence File")]
-        [ForeignKey("FamilyViolenceFile")]
         public int FamilyViolenceFileId { get; set; }
         public FamilyViolenceFileModel FamilyViolenceFile { get; set; }
 
@@ -115,22 +103,18 @@ namespace GoodSamaritan.Models
         public string Gender { get; set; }
 
         [Display(Name = "Ethnicity")]
-        [ForeignKey("Ethnicity")]
         public int EthnicityId { get; set; }
         public EthnicityModel Ethnicity { get; set; }
 
         [Display(Name = "Age")]
-        [ForeignKey("Age")]
         public int AgeId { get; set; }
         public AgeModel Age { get; set; }
 
         [Display(Name = "Repeat Client")]
-        [ForeignKey("RepeatClient")]
         public int RepeatClientId { get; set; }
         public RepeatClientModel RepeatClient { get; set; }
 
         [Display(Name = "Duplicate File")]
-        [ForeignKey("DuplicateFile")]
         public int DuplicateFileId { get; set; }
         public DuplicateFileModel DuplicateFile { get; set; }
 
@@ -147,7 +131,6 @@ namespace GoodSamaritan.Models
         public int NumberOfChildren13To18 { get; set; }
 
         [Display(Name = "Status of File")]
-        [ForeignKey("StatusOfFile")]
         public int StatusOfFileId { get; set; }
         public StatusOfFileModel StatusOfFile { get; set; }
 
