@@ -17,13 +17,19 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Good Samaritan", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    @{ if (User.IsInRole("Administrator") || User.IsInRole("Reporter"))
+                       {<li><a href="~/report.html">View Report</a></li>}
+                    }
+                    @{ if (User.IsInRole("Administrator") || User.IsInRole("Worker"))
+                       {<li>@Html.ActionLink("Manage Clients", "Index", "Client")</li>}
+                    }
                     @{ if (User.IsInRole("Administrator"))
                      {
                         <li>@Html.ActionLink("Clients", "Index", "Client")</li>

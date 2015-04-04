@@ -89,11 +89,6 @@ ul.nav > li:hover ul{
 }
 
 .custom-select {
-    margin: 5px;
-    float: left;
-}
-
-.custom-select select {
     color: white;
     background: darkgrey;
     height: 35px;
@@ -105,9 +100,39 @@ ul.nav > li:hover ul{
     border: none;
     height: 35px;
     width: 150px;
-    margin: 5px;
+}
+
+.custom-button:hover {
+    background: #b15315;
 }
 
 .report-table {
-    padding:5px;
+    padding: 5px;
+}
+
+.custom-nav {
+    background: #df691a;
+    display: block;
+    top: 0px;
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+}
+
+.custom-nav a {
+    color: white;
+    align-content: center;
+}
+
+.custom-nav a:hover {
+    text-decoration: none;
+}
+
+.custom-content {
+    background: #4e5d6c;
+    padding: 50px;
+    padding-top: 40px;
+    margin-left: 29px;
+    margin-right: 29px;
 }
