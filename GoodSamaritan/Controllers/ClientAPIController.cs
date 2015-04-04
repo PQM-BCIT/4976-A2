@@ -14,6 +14,7 @@ using GoodSamaritan.Report;
 
 namespace GoodSamaritan.Controllers
 {
+    [Authorize(Roles = "Administrator, Reporter")]
     [RoutePrefix("api/ClientAPI")]
     public class ClientAPIController : ApiController
     {

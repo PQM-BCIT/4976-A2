@@ -25,6 +25,26 @@
         };
         $scope.years = [_year];
 
+        var report = {
+            statusOpen: "--",
+            statusClosed: "--",
+            statusReopened: "--",
+            programCrisis: "--",
+            programCourt: "--",
+            programSMART: "--",
+            programDVU: "--",
+            programMCFD: "--",
+            genderFemale: "--",
+            genderMale: "--",
+            genderTrans: "--",
+            ageAdult: "--",
+            ageYouth2: "--",
+            ageYouth1: "--",
+            ageChild: "--",
+            ageSenior: "--"
+        }
+        $scope.report = report;
+
         // Grabs the fiscal years from the database
         $http.get("../api/FiscalYearAPI") // will be changed to http://a3.thedistantvoice.me/api/FiscalYearAPI in the future..?
         .success(function (response) {
