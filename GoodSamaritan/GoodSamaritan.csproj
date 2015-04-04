@@ -202,6 +202,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Controllers\SmartController.cs" />
     <Compile Include="Controllers\SmartModelsController.cs" />
     <Compile Include="Controllers\Smart\BadDateReportController.cs" />
     <Compile Include="Controllers\Smart\CityOfAssaultController.cs" />
@@ -535,6 +536,7 @@
     <Content Include="Views\Client\Edit.cshtml" />
     <Content Include="Views\Client\Index.cshtml" />
     <Content Include="Scripts\version.json" />
+    <Content Include="Views\Home\Denied.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

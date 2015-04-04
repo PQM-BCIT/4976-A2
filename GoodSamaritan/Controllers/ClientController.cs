@@ -20,7 +20,7 @@ namespace GoodSamaritan.Controllers
         {
             if (!User.IsInRole("Worker") && !User.IsInRole("Administrator"))
             {
-                return null;
+                return RedirectToAction("Denied", "Home");
             }
 
             var clientModel = db.ClientModel.Include(c => c.AbuserRealtionship).Include(c => c.Age).Include(c => c.AssignedWorker).Include(c => c.Crisis).Include(c => c.DuplicateFile).Include(c => c.Ethnicity).Include(c => c.FamilyViolenceFile).Include(c => c.FiscalYear).Include(c => c.Incident).Include(c => c.Program).Include(c => c.ReferralSource).Include(c => c.RepeatClient).Include(c => c.RiskLevel).Include(c => c.RiskStatus).Include(c => c.Service).Include(c => c.StatusOfFile).Include(c => c.VictimOfIncident);
@@ -32,7 +32,7 @@ namespace GoodSamaritan.Controllers
         {
             if (!User.IsInRole("Worker") && !User.IsInRole("Administrator"))
             {
-                return null;
+                return RedirectToAction("Denied", "Home");
             }
             if (id == null)
             {
@@ -51,7 +51,7 @@ namespace GoodSamaritan.Controllers
         {
             if (!User.IsInRole("Worker") && !User.IsInRole("Administrator"))
             {
-                return null;
+                return RedirectToAction("Denied", "Home");
             }
             ViewBag.AbuserRelationshipId = new SelectList(db.AbuserRelationshipModel, "AbuserRelationshipId", "AbuserRelationship");
             ViewBag.AgeId = new SelectList(db.AgeModel, "AgeId", "Age");
@@ -82,7 +82,7 @@ namespace GoodSamaritan.Controllers
         {
             if (!User.IsInRole("Worker") && !User.IsInRole("Administrator"))
             {
-                return null;
+                return RedirectToAction("Denied", "Home");
             }
             if (ModelState.IsValid)
             {
@@ -116,7 +116,7 @@ namespace GoodSamaritan.Controllers
         {
             if (!User.IsInRole("Worker") && !User.IsInRole("Administrator"))
             {
-                return null;
+                return RedirectToAction("Denied", "Home");
             }
             if (id == null)
             {
@@ -156,7 +156,7 @@ namespace GoodSamaritan.Controllers
         {
             if (!User.IsInRole("Worker") && !User.IsInRole("Administrator"))
             {
-                return null;
+                return RedirectToAction("Denied", "Home");
             }
             if (ModelState.IsValid)
             {
@@ -189,7 +189,7 @@ namespace GoodSamaritan.Controllers
         {
             if (!User.IsInRole("Worker") && !User.IsInRole("Administrator"))
             {
-                return null;
+                return RedirectToAction("Denied", "Home");
             }
             if (id == null)
             {
@@ -210,7 +210,7 @@ namespace GoodSamaritan.Controllers
         {
             if (!User.IsInRole("Worker") && !User.IsInRole("Administrator"))
             {
-                return null;
+                return RedirectToAction("Denied", "Home");
             }
             ClientModel clientModel = await db.ClientModel.FindAsync(id);
             db.ClientModel.Remove(clientModel);

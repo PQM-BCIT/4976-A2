@@ -26,5 +26,12 @@ namespace GoodSamaritan.Controllers
 
             return View();
         }
+
+        public ActionResult Denied()
+        {
+            ViewBag.Message = "You do not have sufficient permissions.";
+
+            return View();
+        }
     }
 }
