@@ -8,6 +8,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using GoodSamaritan.Models;
+using System.Diagnostics;
 
 namespace GoodSamaritan.Controllers
 {
@@ -87,9 +88,22 @@ namespace GoodSamaritan.Controllers
             }
             if (ModelState.IsValid)
             {
+                var IsSmartModel = false;
+                if (clientModel.ProgramId == 3)
+                {
+                    IsSmartModel = true;
+                }
                 db.ClientModel.Add(clientModel);
                 await db.SaveChangesAsync();
-                return RedirectToAction("Index");
+
+                if (IsSmartModel)
+                {
+                    return RedirectToAction("Create", "Smart");
+                }
+                else
+                {
+                    return RedirectToAction("Index");
+                }
             }
 
             ViewBag.AbuserRelationshipId = new SelectList(db.AbuserRelationshipModel, "AbuserRelationshipId", "AbuserRelationship", clientModel.AbuserRelationshipId);
