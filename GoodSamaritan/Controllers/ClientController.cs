@@ -9,6 +9,7 @@ using System.Web;
 using System.Web.Mvc;
 using GoodSamaritan.Models;
 using System.Diagnostics;
+using GoodSamaritan.Models.SmartEntity;
 
 namespace GoodSamaritan.Controllers
 {
@@ -98,7 +99,9 @@ namespace GoodSamaritan.Controllers
 
                 if (IsSmartModel)
                 {
-                    return RedirectToAction("Create", "Smart");
+                    SmartModel smart = new SmartModel() {
+                    };
+                    return RedirectToAction("Edit/", "Smart");
                 }
                 else
                 {
