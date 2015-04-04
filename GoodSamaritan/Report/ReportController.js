@@ -31,12 +31,19 @@
             $scope.years = response;
         });
 
-        $scope.getClients = function () {
-            $http.get("../api/ClientAPI") // will be changed to http://a3.thedistantvoice.me/api/ClientAPI in the future..?
+        $scope.getReport = function () {
+            $http.get("../api/ClientAPI/GetReport/" + $scope.select.month + "/" + $scope.select.year) // will be changed to http://a3.thedistantvoice.me/api/ClientAPI/GetReport/ in the future..?
             .success(function (response) {
-                $scope.clients = response;
+                $scope.report = response;
             });
         }
+
+        //$scope.getClients = function () {
+        //    $http.get("../api/ClientAPI") // will be changed to http://a3.thedistantvoice.me/api/ClientAPI in the future..?
+        //    .success(function (response) {
+        //        $scope.clients = response;
+        //    });
+        //}
     };
 
     app.controller("ReportController", ["$scope", "$http", ReportController]);

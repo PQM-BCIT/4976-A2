@@ -24,7 +24,7 @@
             <tr>
                 <th>Report for:</th>
                 <td>
-                    <select id='month' class="custom-select">
+                    <select id='month' ng-model="select.month" class="custom-select">
                         <option selected value='1'>Janaury</option>
                         <option value='2'>February</option>
                         <option value='3'>March</option>
@@ -40,11 +40,11 @@
                     </select>
                 </td>
                 <td>
-                    <select id="year" class="custom-select">
+                    <select id="year" ng-model="select.year" class="custom-select">
                         <option ng-repeat="y in years" value="{{ y.FiscalYearId }}">{{ y.FiscalYear }}</option>
                     </select>
                 </td>
-                <td><button ng-click="getClients()" class="custom-button">Get Report</button></td>
+                <td><button ng-click="getReport()" class="custom-button">Get Report</button></td>
             </tr>
         </table>
 
@@ -52,34 +52,21 @@
 
         <div class="report-table">
 
-            <table class="table">
-                <tr>
-                    <th>Fiscal Year</th>
-                    <th>Month</th>
-                    <th>Day</th>
-                </tr>
-                <tr ng-repeat="c in clients">
-                    <td>{{ c.FiscalYearId }}</td>
-                    <td>{{ c.Month }}</td>
-                    <td>{{ c.Day }}</td>
-                </tr>
-            </table>
-            <h3>Report... WIP</h3>
             <table>
                 <tr>
                     <th style="width:100px;">Status</th>
                     <td style="width:100px;">Open</td>
-                    <td>{{ open }}</td>
+                    <td>{{ report.statusOpen }}</td>
                 </tr>
                 <tr>
                     <th></th>
                     <td>Closed</td>
-                    <td>{{ closed }}</td>
+                    <td>{{ report.statusClosed }}</td>
                 </tr>
                 <tr>
                     <th></th>
                     <td>Reopened</td>
-                    <td>{{ reopened }}</td>
+                    <td>{{ report.statusReopened }}</td>
                 </tr>
 
                 <tr><td>&nbsp;</td></tr>
@@ -87,27 +74,27 @@
                 <tr>
                     <th>Program</th>
                     <td>Crisis</td>
-                    <td>{{ crisis }}</td>
+                    <td>{{ report.programCrisis }}</td>
                 </tr>
                 <tr>
                     <th></th>
                     <td>Court</td>
-                    <td>{{ court }}</td>
+                    <td>{{ report.programCourt }}</td>
                 </tr>
                 <tr>
                     <th></th>
-                    <td>Smart</td>
-                    <td>{{ smart }}</td>
+                    <td>SMART</td>
+                    <td>{{ report.programSMART }}</td>
                 </tr>
                 <tr>
                     <th></th>
                     <td>DVU</td>
-                    <td>{{ dvu }}</td>
+                    <td>{{ report.programDVU }}</td>
                 </tr>
                 <tr>
                     <th></th>
                     <td>MCFD</td>
-                    <td>{{ mcfd }}</td>
+                    <td>{{ report.programMCFD }}</td>
                 </tr>
 
                 <tr><td>&nbsp;</td></tr>
@@ -115,17 +102,17 @@
                 <tr>
                     <th>Gender</th>
                     <td>Female</td>
-                    <td>{{ female }}</td>
+                    <td>{{ report.genderFemale }}</td>
                 </tr>
                 <tr>
                     <th></th>
                     <td>Male</td>
-                    <td>{{ male }}</td>
+                    <td>{{ report.genderMale }}</td>
                 </tr>
                 <tr>
                     <th></th>
                     <td>Trans</td>
-                    <td>{{ trans }}</td>
+                    <td>{{ report.genderTrans }}</td>
                 </tr>
 
                 <tr><td>&nbsp;</td></tr>
@@ -133,27 +120,27 @@
                 <tr>
                     <th>Age</th>
                     <td>Adult > 24 < 65</td>
-                    <td>{{ adult }}</td>
+                    <td>{{ report.ageAdult }}</td>
                 </tr>
                 <tr>
                     <th></th>
                     <td>Youth > 18 < 25</td>
-                    <td>{{ youth1 }}</td>
+                    <td>{{ report.ageYouth2 }}</td>
                 </tr>
                 <tr>
                     <th></th>
                     <td>Youth > 12 < 19</td>
-                    <td>{{ youth2 }}</td>
+                    <td>{{ report.ageYouth1 }}</td>
                 </tr>
                 <tr>
                     <th></th>
                     <td>Child</td>
-                    <td>{{ child }}</td>
+                    <td>{{ report.ageChild }}</td>
                 </tr>
                 <tr>
                     <th></th>
                     <td>Senior</td>
-                    <td>{{ senior }}</td>
+                    <td>{{ report.ageSenior }}</td>
                 </tr>
             </table>
         </div>

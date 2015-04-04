@@ -9,12 +9,12 @@ namespace GoodSamaritan.Report
     {
         // Counts of reports with listed attributes
         public int statusOpen { get; set; }
-        public int stateClosed { get; set; }
+        public int statusClosed { get; set; }
         public int statusReopened { get; set; }
 
         public int programCrisis { get; set; }
         public int programCourt { get; set; }
-        public int programSmart { get; set; }
+        public int programSMART { get; set; }
         public int programDVU { get; set; }
         public int programMCFD { get; set; }
 
