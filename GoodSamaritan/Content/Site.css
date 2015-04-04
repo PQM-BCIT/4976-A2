@@ -90,10 +90,6 @@ ul.nav > li:hover ul{
 
 .custom-select {
     margin: 5px;
-    float: left;
-}
-
-.custom-select select {
     color: white;
     background: darkgrey;
     height: 35px;

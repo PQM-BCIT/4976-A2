@@ -12,31 +12,46 @@
     <div ng-controller="ReportController">
 
         <h1>{{ message }}</h1>
+        <h4>Month End Statistics</h4>
+        <br/>
 
-        <div class="custom-select">
-            <select id='month'>
-                <option selected value='1'>Janaury</option>
-                <option value='2'>February</option>
-                <option value='3'>March</option>
-                <option value='4'>April</option>
-                <option value='5'>May</option>
-                <option value='6'>June</option>
-                <option value='7'>July</option>
-                <option value='8'>August</option>
-                <option value='9'>September</option>
-                <option value='10'>October</option>
-                <option value='11'>November</option>
-                <option value='12'>December</option>
-            </select>
-        </div>
-        <div class="custom-select">
-            <select id="year">
-                <option ng-repeat="y in years" value="{{ y.FiscalYearId }}">{{ y.FiscalYear }}</option>
-            </select>
-        </div>
-        <button ng-click="getClients()" class="custom-button">Get Clients</button>
-        
+        <table>
+            <tr>
+                <th style="width:100px;">Report Date:</th>
+                <td>{{ currentDate }}</td>
+            </tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr>
+                <th>Report for:</th>
+                <td>
+                    <select id='month' class="custom-select">
+                        <option selected value='1'>Janaury</option>
+                        <option value='2'>February</option>
+                        <option value='3'>March</option>
+                        <option value='4'>April</option>
+                        <option value='5'>May</option>
+                        <option value='6'>June</option>
+                        <option value='7'>July</option>
+                        <option value='8'>August</option>
+                        <option value='9'>September</option>
+                        <option value='10'>October</option>
+                        <option value='11'>November</option>
+                        <option value='12'>December</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="year" class="custom-select">
+                        <option ng-repeat="y in years" value="{{ y.FiscalYearId }}">{{ y.FiscalYear }}</option>
+                    </select>
+                </td>
+                <td><button ng-click="getClients()" class="custom-button">Get Report</button></td>
+            </tr>
+        </table>
+
+        <hr />
+
         <div class="report-table">
+
             <table class="table">
                 <tr>
                     <th>Fiscal Year</th>
@@ -49,7 +64,6 @@
                     <td>{{ c.Day }}</td>
                 </tr>
             </table>
-
             <h3>Report... WIP</h3>
             <table>
                 <tr>

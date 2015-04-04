@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using GoodSamaritan.Models;
+using GoodSamaritan.Report;
 
 namespace GoodSamaritan.Controllers
 {
@@ -115,5 +116,6 @@ namespace GoodSamaritan.Controllers
         {
             return db.ClientModel.Count(e => e.ClientReferenceNumber == id) > 0;
         }
+
     }
 }
