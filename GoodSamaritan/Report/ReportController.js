@@ -4,7 +4,17 @@
 
     var ReportController = function ($scope, $http) {
 
-        $scope.message = "Client Report";
+        $http.get("../api/ClientAPI/ReportLogin") // will be changed to http://a3.thedistantvoice.me/api/ClientAPI/ReportLogin in the future..?
+        .success(function (response) {
+            if (response == "true") {
+                $scope.report = response;
+                $scope.showLogin = false;
+                $scope.showReport = true;
+            } else {
+                $scope.showLogin = true;
+                $scope.showReport = false;
+            }
+        })
 
         var today = new Date();
         var dd = today.getDate();
@@ -55,15 +65,38 @@
             $http.get("../api/ClientAPI/GetReport/" + $scope.select.month + "/" + $scope.select.year) // will be changed to http://a3.thedistantvoice.me/api/ClientAPI/GetReport/ in the future..?
             .success(function (response) {
                 $scope.report = response;
+            })
+            .error(function (response) {
+                alert("ERROR");
             });
         }
 
-        //$scope.getClients = function () {
-        //    $http.get("../api/ClientAPI") // will be changed to http://a3.thedistantvoice.me/api/ClientAPI in the future..?
-        //    .success(function (response) {
-        //        $scope.clients = response;
-        //    });
-        //}
+        $scope.login = function () {
+            var data = "grant_type=password&" + "username=" + $scope.login.email + "&password=" + $scope.login.password;
+
+            $http.post("http://localhost:51461/Token", data, {
+                headers:
+            { 'Content-Type': 'application/x-www-form-urlencoded' }
+            }).success(function (response) {
+
+                $http.get("../api/ClientAPI/ReportLogin") // will be changed to http://a3.thedistantvoice.me/api/ClientAPI/ReportLogin in the future..?
+                .success(function (response) {
+                    if (response == "true") {
+                        $scope.report = response;
+                        $scope.showLogin = false;
+                        $scope.showReport = true;
+                    } else {
+                        $scope.loginError = "User is not authorized to view this page."
+                    }
+                })
+                .error(function (response) {
+                    $scope.loginError = "User is not authorized to view this page."
+                });
+
+            }).error(function (error) {
+                $scope.loginError = "Invalid login attempt."
+            });
+        }
     };
 
     app.controller("ReportController", ["$scope", "$http", ReportController]);

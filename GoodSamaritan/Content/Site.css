@@ -100,7 +100,6 @@ ul.nav > li:hover ul{
     border: none;
     height: 35px;
     width: 150px;
-    margin: 5px;
 }
 
 .custom-button:hover {
@@ -108,7 +107,7 @@ ul.nav > li:hover ul{
 }
 
 .report-table {
-    padding:5px;
+    padding: 5px;
 }
 
 .custom-nav {
@@ -124,6 +123,10 @@ ul.nav > li:hover ul{
 .custom-nav a {
     color: white;
     align-content: center;
+}
+
+.custom-nav a:hover {
+    text-decoration: none;
 }
 
 .custom-content {

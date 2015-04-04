@@ -120,6 +120,13 @@ namespace GoodSamaritan.Controllers
         }
 
         [HttpGet]
+        [Route("ReportLogin")]
+        public bool ReportLogin()
+        {
+            return true;
+        }
+
+        [HttpGet]
         [Route("GetReport/{month:int}/{year:int}")]
         public ReportCount GetReport(int month, int year)
         {

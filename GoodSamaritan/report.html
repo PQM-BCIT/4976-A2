@@ -12,144 +12,172 @@
     <nav class="custom-nav">
         <h4><a href="../">Good Samaritan</a></h4>
     </nav>
+
     <div class="custom-content">
         <div ng-controller="ReportController">
 
-            <h1>{{ message }}</h1>
+            <h1>Client Report</h1>
             <h4>Month End Statistics</h4>
             <br />
 
-            <table>
-                <tr>
-                    <th style="width:100px;">Report Date:</th>
-                    <td>{{ currentDate }}</td>
-                </tr>
-                <tr><td>&nbsp;</td></tr>
-                <tr>
-                    <th>Report for:</th>
-                    <td style="width:155px;">
-                        <select id='month' ng-model="select.month" class="custom-select">
-                            <option selected value='1'>Janaury</option>
-                            <option value='2'>February</option>
-                            <option value='3'>March</option>
-                            <option value='4'>April</option>
-                            <option value='5'>May</option>
-                            <option value='6'>June</option>
-                            <option value='7'>July</option>
-                            <option value='8'>August</option>
-                            <option value='9'>September</option>
-                            <option value='10'>October</option>
-                            <option value='11'>November</option>
-                            <option value='12'>December</option>
-                        </select>
-                    </td>
-                    <td>
-                        <select id="year" ng-model="select.year" class="custom-select">
-                            <option ng-repeat="y in years" value="{{ y.FiscalYearId }}">{{ y.FiscalYear }}</option>
-                        </select>
-                    </td>
-                    <td><button ng-click="getReport()" class="custom-button">Get Report</button></td>
-                </tr>
-            </table>
-
-            <hr />
-
-            <div class="report-table">
-
+            <div ng-show="showLogin">
+                <h1>Log in</h1>
                 <table>
                     <tr>
-                        <th style="width:100px;">Status</th>
-                        <td style="width:100px;">Open</td>
-                        <td>{{ report.statusOpen }}</td>
+                        <td></td>
+                        <td><span style="color: #b15315; font-size: medium;"><b>{{ loginError }}</b></span></td>
                     </tr>
                     <tr>
-                        <th></th>
-                        <td>Closed</td>
-                        <td>{{ report.statusClosed }}</td>
+                        <th style="width: 100px">Email</th>
+                        <td><input type="text" size="23" ng-model="login.email" /></td>
                     </tr>
                     <tr>
-                        <th></th>
-                        <td>Reopened</td>
-                        <td>{{ report.statusReopened }}</td>
-                    </tr>
-
-                    <tr><td>&nbsp;</td></tr>
-
-                    <tr>
-                        <th>Program</th>
-                        <td>Crisis</td>
-                        <td>{{ report.programCrisis }}</td>
+                        <th>Password</th>
+                        <td><input type="password" size="23" ng-model="login.password" /></td>
                     </tr>
                     <tr>
-                        <th></th>
-                        <td>Court</td>
-                        <td>{{ report.programCourt }}</td>
-                    </tr>
-                    <tr>
-                        <th></th>
-                        <td>SMART</td>
-                        <td>{{ report.programSMART }}</td>
-                    </tr>
-                    <tr>
-                        <th></th>
-                        <td>DVU</td>
-                        <td>{{ report.programDVU }}</td>
-                    </tr>
-                    <tr>
-                        <th></th>
-                        <td>MCFD</td>
-                        <td>{{ report.programMCFD }}</td>
-                    </tr>
-
-                    <tr><td>&nbsp;</td></tr>
-
-                    <tr>
-                        <th>Gender</th>
-                        <td>Female</td>
-                        <td>{{ report.genderFemale }}</td>
-                    </tr>
-                    <tr>
-                        <th></th>
-                        <td>Male</td>
-                        <td>{{ report.genderMale }}</td>
-                    </tr>
-                    <tr>
-                        <th></th>
-                        <td>Trans</td>
-                        <td>{{ report.genderTrans }}</td>
-                    </tr>
-
-                    <tr><td>&nbsp;</td></tr>
-
-                    <tr>
-                        <th>Age</th>
-                        <td>Adult > 24 < 65</td>
-                        <td>{{ report.ageAdult }}</td>
-                    </tr>
-                    <tr>
-                        <th></th>
-                        <td>Youth > 18 < 25</td>
-                        <td>{{ report.ageYouth2 }}</td>
-                    </tr>
-                    <tr>
-                        <th></th>
-                        <td>Youth > 12 < 19</td>
-                        <td>{{ report.ageYouth1 }}</td>
-                    </tr>
-                    <tr>
-                        <th></th>
-                        <td>Child</td>
-                        <td>{{ report.ageChild }}</td>
-                    </tr>
-                    <tr>
-                        <th></th>
-                        <td>Senior</td>
-                        <td>{{ report.ageSenior }}</td>
+                        <td></td>
+                        <td><button ng-click="login()" class="custom-button">Log in</button></td>
                     </tr>
                 </table>
             </div>
 
+            <div ng-show="showReport">
+                <table>
+                    <tr>
+                        <th style="width:100px;">Report Date:</th>
+                        <td>{{ currentDate }}</td>
+                    </tr>
+                    <tr><td>&nbsp;</td></tr>
+                    <tr>
+                        <th>Report for:</th>
+                        <td style="width:155px;">
+                            <select id='month' ng-model="select.month" class="custom-select">
+                                <option selected value='1'>Janaury</option>
+                                <option value='2'>February</option>
+                                <option value='3'>March</option>
+                                <option value='4'>April</option>
+                                <option value='5'>May</option>
+                                <option value='6'>June</option>
+                                <option value='7'>July</option>
+                                <option value='8'>August</option>
+                                <option value='9'>September</option>
+                                <option value='10'>October</option>
+                                <option value='11'>November</option>
+                                <option value='12'>December</option>
+                            </select>
+                        </td>
+                        <td style="width:155px;">
+                            <select id="year" ng-model="select.year" class="custom-select">
+                                <option ng-repeat="y in years" value="{{ y.FiscalYearId }}">{{ y.FiscalYear }}</option>
+                            </select>
+                        </td>
+                        <td><button ng-click="getReport()" class="custom-button">Get Report</button></td>
+                    </tr>
+                </table>
+
+                <hr />
+
+                <div class="report-table">
+
+                    <table>
+                        <tr>
+                            <th style="width:100px;">Status</th>
+                            <td style="width:100px;">Open</td>
+                            <td>{{ report.statusOpen }}</td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td>Closed</td>
+                            <td>{{ report.statusClosed }}</td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td>Reopened</td>
+                            <td>{{ report.statusReopened }}</td>
+                        </tr>
+
+                        <tr><td>&nbsp;</td></tr>
+
+                        <tr>
+                            <th>Program</th>
+                            <td>Crisis</td>
+                            <td>{{ report.programCrisis }}</td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td>Court</td>
+                            <td>{{ report.programCourt }}</td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td>SMART</td>
+                            <td>{{ report.programSMART }}</td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td>DVU</td>
+                            <td>{{ report.programDVU }}</td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td>MCFD</td>
+                            <td>{{ report.programMCFD }}</td>
+                        </tr>
+
+                        <tr><td>&nbsp;</td></tr>
+
+                        <tr>
+                            <th>Gender</th>
+                            <td>Female</td>
+                            <td>{{ report.genderFemale }}</td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td>Male</td>
+                            <td>{{ report.genderMale }}</td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td>Trans</td>
+                            <td>{{ report.genderTrans }}</td>
+                        </tr>
+
+                        <tr><td>&nbsp;</td></tr>
+
+                        <tr>
+                            <th>Age</th>
+                            <td>Adult > 24 < 65</td>
+                            <td>{{ report.ageAdult }}</td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td>Youth > 18 < 25</td>
+                            <td>{{ report.ageYouth2 }}</td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td>Youth > 12 < 19</td>
+                            <td>{{ report.ageYouth1 }}</td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td>Child</td>
+                            <td>{{ report.ageChild }}</td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td>Senior</td>
+                            <td>{{ report.ageSenior }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
         </div>
+
+    <br/>
+    <a href="../">Back to Main</a>
     </div>
 </body>
 </html>

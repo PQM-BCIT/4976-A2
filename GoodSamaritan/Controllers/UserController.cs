@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace GoodSamaritan.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class UserController : Controller
     {
         // GET: User
@@ -46,8 +47,6 @@ namespace GoodSamaritan.Controllers
             return View();
         }
 
-
-        [Authorize(Roles = "Administrator")]
         public ActionResult UserLock(string userName)
         {
             using (var context = new ApplicationDbContext())
@@ -70,7 +69,6 @@ namespace GoodSamaritan.Controllers
             return RedirectToAction("Index", "User");
         }
 
-        [Authorize(Roles = "Administrator")]
         public ActionResult UserUnlock(string userName)
         {
             using (var context = new ApplicationDbContext())
