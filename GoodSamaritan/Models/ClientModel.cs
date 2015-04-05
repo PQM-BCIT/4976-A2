@@ -99,7 +99,7 @@ namespace GoodSamaritan.Models
         public int FamilyViolenceFileId { get; set; }
         public FamilyViolenceFileModel FamilyViolenceFile { get; set; }
 
-        [RegularExpression("^M|F|Trans$")]
+        [RegularExpression("^M|F|Trans$", ErrorMessage = "Must be either M, F, or Trans")]
         public string Gender { get; set; }
 
         [Display(Name = "Ethnicity")]
