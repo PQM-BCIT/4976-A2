@@ -4,12 +4,14 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace GoodSamaritan.Models.SmartEntity
 {
     public class SmartModel
     {
         [Key]
+        [HiddenInput(DisplayValue = false)]
         public int ClientReferenceNumber { get; set; }
 
         [ForeignKey("SexWorkExploitation")]
