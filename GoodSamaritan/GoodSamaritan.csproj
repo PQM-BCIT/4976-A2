@@ -201,6 +201,7 @@
     <Compile Include="Controllers\FiscalYearAPIController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\SmartController.cs" />
     <Compile Include="Controllers\Smart\BadDateReportController.cs" />
@@ -537,6 +538,8 @@
     <Content Include="Views\Client\Index.cshtml" />
     <Content Include="Scripts\version.json" />
     <Content Include="Views\Home\Denied.cshtml" />
+    <Content Include="Views\Report\Index.cshtml" />
+    <Content Include="Views\Report\ViewStats.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
