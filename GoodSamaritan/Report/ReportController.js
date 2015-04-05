@@ -52,7 +52,7 @@
         }
 
         $scope.login = function () {
-            $scope.loginError = "Loggin in..."
+            $scope.loginError = "Logging in..."
             var data = "grant_type=password&" + "username=" + $scope.login.email + "&password=" + $scope.login.password;
 
             $http.post("http://a3.thedistantvoice.me/Token", data, {
