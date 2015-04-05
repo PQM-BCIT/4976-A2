@@ -173,14 +173,16 @@ namespace GoodSamaritan.Controllers
 
                 switch (report.Gender)
                 {
-                    case "Female":
+                    case "F":
                         reportCount.genderFemale++;
                         break;
-                    case "Male":
+                    case "M":
                         reportCount.genderMale++;
                         break;
-                    default:
+                    case "Trans":
                         reportCount.genderTrans++;
+                        break;
+                    default:
                         break;
                 }
 
