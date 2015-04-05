@@ -35,26 +35,6 @@
         };
         $scope.years = [_year];
 
-        var report = {
-            statusOpen: "--",
-            statusClosed: "--",
-            statusReopened: "--",
-            programCrisis: "--",
-            programCourt: "--",
-            programSMART: "--",
-            programDVU: "--",
-            programMCFD: "--",
-            genderFemale: "--",
-            genderMale: "--",
-            genderTrans: "--",
-            ageAdult: "--",
-            ageYouth2: "--",
-            ageYouth1: "--",
-            ageChild: "--",
-            ageSenior: "--"
-        }
-        $scope.report = report;
-
         // Grabs the fiscal years from the database
         $http.get("http://a3.thedistantvoice.me/api/FiscalYearAPI")
         .success(function (response) {
@@ -72,6 +52,7 @@
         }
 
         $scope.login = function () {
+            $scope.loginError = "Loggin in..."
             var data = "grant_type=password&" + "username=" + $scope.login.email + "&password=" + $scope.login.password;
 
             $http.post("http://a3.thedistantvoice.me/Token", data, {
