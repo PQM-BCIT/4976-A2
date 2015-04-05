@@ -1,17 +1,22 @@
 ﻿using GoodSamaritan.Models.ClientEntity;
+using GoodSamaritan.Models.SmartEntity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace GoodSamaritan.Models
 {
     public class ClientModel
     {
         [Key]
+        [HiddenInput(DisplayValue = false)]
+        [ForeignKey("SmartModel")]
         public int ClientReferenceNumber { get; set; }
+        public SmartModel SmartModel { get; set; }
 
         [Display(Name = "Fiscal Year")]
         public int FiscalYearId { get; set; }

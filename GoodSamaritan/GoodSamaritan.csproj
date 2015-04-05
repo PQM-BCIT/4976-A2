@@ -274,10 +274,6 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\GoodSamaritan.mdf" />
-    <Content Include="App_Data\GoodSamaritan_log.ldf">
-      <DependentUpon>GoodSamaritan.mdf</DependentUpon>
-    </Content>
     <Content Include="App_Data\Identity.mdf" />
     <Content Include="App_Data\Identity_log.ldf">
       <DependentUpon>Identity.mdf</DependentUpon>
@@ -311,6 +307,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\smart.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -525,21 +522,21 @@
     <Content Include="Views\Role\RoleCreate.cshtml" />
     <Content Include="Views\Role\RoleIndex.cshtml" />
     <Content Include="Views\Role\RoleAddToUser.cshtml" />
-    <Content Include="Views\Smart\Create.cshtml" />
-    <Content Include="Views\Smart\Delete.cshtml" />
-    <Content Include="Views\Smart\Details.cshtml" />
-    <Content Include="Views\Smart\Edit.cshtml" />
-    <Content Include="Views\Smart\Index.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Scripts\version.json" />
+    <Content Include="Views\Home\Denied.cshtml" />
+    <Content Include="Views\Report\Index.cshtml" />
+    <Content Include="Views\Report\ViewStats.cshtml" />
     <Content Include="Views\Client\Create.cshtml" />
     <Content Include="Views\Client\Delete.cshtml" />
     <Content Include="Views\Client\Details.cshtml" />
     <Content Include="Views\Client\Edit.cshtml" />
     <Content Include="Views\Client\Index.cshtml" />
-    <Content Include="Scripts\version.json" />
-    <Content Include="Views\Home\Denied.cshtml" />
-    <Content Include="Views\Report\Index.cshtml" />
-    <Content Include="Views\Report\ViewStats.cshtml" />
+    <Content Include="Views\Smart\Create.cshtml" />
+    <Content Include="Views\Smart\Delete.cshtml" />
+    <Content Include="Views\Smart\Details.cshtml" />
+    <Content Include="Views\Smart\Edit.cshtml" />
+    <Content Include="Views\Smart\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
