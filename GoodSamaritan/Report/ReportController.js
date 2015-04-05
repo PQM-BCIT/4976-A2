@@ -13,6 +13,7 @@
                 $scope.report = response;
                 $scope.showLogin = false;
                 $scope.showReport = true;
+                getYear();
             } else {
                 $scope.showLogin = true;
                 $scope.showReport = false;
@@ -38,11 +39,13 @@
         };
         $scope.years = [_year];
 
-        // Grabs the fiscal years from the database
-        $http.get("http://a3.thedistantvoice.me/api/FiscalYearAPI")
-        .success(function (response) {
-            $scope.years = response;
-        });
+        getYear = function () {
+            // Grabs the fiscal years from the database
+            $http.get("http://a3.thedistantvoice.me/api/FiscalYearAPI")
+            .success(function (response) {
+                $scope.years = response;
+            });
+        }
 
         $scope.getReport = function () {
 
@@ -73,6 +76,7 @@
                         $scope.report = response;
                         $scope.showLogin = false;
                         $scope.showReport = true;
+                        getYear();
                     } else {
                         $scope.loginError = "User is not authorized to view this page."
                     }
