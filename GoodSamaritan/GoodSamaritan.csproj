@@ -201,8 +201,9 @@
     <Compile Include="Controllers\FiscalYearAPIController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
-    <Compile Include="Controllers\SmartModelsController.cs" />
+    <Compile Include="Controllers\SmartController.cs" />
     <Compile Include="Controllers\Smart\BadDateReportController.cs" />
     <Compile Include="Controllers\Smart\CityOfAssaultController.cs" />
     <Compile Include="Controllers\Smart\CityOfResidenceController.cs" />
@@ -524,11 +525,11 @@
     <Content Include="Views\Role\RoleCreate.cshtml" />
     <Content Include="Views\Role\RoleIndex.cshtml" />
     <Content Include="Views\Role\RoleAddToUser.cshtml" />
-    <Content Include="Views\SmartModels\Create.cshtml" />
-    <Content Include="Views\SmartModels\Delete.cshtml" />
-    <Content Include="Views\SmartModels\Details.cshtml" />
-    <Content Include="Views\SmartModels\Edit.cshtml" />
-    <Content Include="Views\SmartModels\Index.cshtml" />
+    <Content Include="Views\Smart\Create.cshtml" />
+    <Content Include="Views\Smart\Delete.cshtml" />
+    <Content Include="Views\Smart\Details.cshtml" />
+    <Content Include="Views\Smart\Edit.cshtml" />
+    <Content Include="Views\Smart\Index.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\Client\Create.cshtml" />
     <Content Include="Views\Client\Delete.cshtml" />
@@ -536,6 +537,9 @@
     <Content Include="Views\Client\Edit.cshtml" />
     <Content Include="Views\Client\Index.cshtml" />
     <Content Include="Scripts\version.json" />
+    <Content Include="Views\Home\Denied.cshtml" />
+    <Content Include="Views\Report\Index.cshtml" />
+    <Content Include="Views\Report\ViewStats.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

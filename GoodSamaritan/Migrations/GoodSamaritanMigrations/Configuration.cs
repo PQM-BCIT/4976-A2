@@ -361,7 +361,7 @@ namespace GoodSamaritan.Migrations.GoodSamaritanMigrations
 
             context.AgeModel.AddOrUpdate(
                 s => s.Age,
-                new AgeModel { Age = "Adult <24 <65" },
+                new AgeModel { Age = "Adult >24 <65" },
                 new AgeModel { Age = "Youth >12 <19" },
                 new AgeModel { Age = "Youth >18 <25" },
                 new AgeModel { Age = "Child <13" },

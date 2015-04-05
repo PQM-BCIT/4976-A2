@@ -15,14 +15,14 @@ namespace GoodSamaritan.Controllers
     {
         private GoodSamaritanContext db = new GoodSamaritanContext();
 
-        // GET: SmartModels
+        // GET: Smart
         public ActionResult Index()
         {
             var smartModel = db.SmartModel.Include(s => s.BadDateReport).Include(s => s.CityOfAssault).Include(s => s.CityOfResidence).Include(s => s.DrugFacilitatedAssault).Include(s => s.EvidenceStored).Include(s => s.HIVMeds).Include(s => s.HospitalAttended).Include(s => s.MedicalOnly).Include(s => s.MultiplePerpetrators).Include(s => s.PoliceAttendance).Include(s => s.PoliceReported).Include(s => s.ReferredToCBVS).Include(s => s.ReferringHospital).Include(s => s.SexWorkExploitation).Include(s => s.SocialWorkAttendance).Include(s => s.ThirdPartyReport).Include(s => s.VictimServicesAttendance);
             return View(smartModel.ToList());
         }
 
-        // GET: SmartModels/Details/5
+        // GET: Smart/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -37,7 +37,7 @@ namespace GoodSamaritan.Controllers
             return View(smartModel);
         }
 
-        // GET: SmartModels/Create
+        // GET: Smart/Create
         public ActionResult Create()
         {
             ViewBag.BadDateReportId = new SelectList(db.BadDateReportModel, "BadDateReportId", "BadDateReport");
@@ -60,7 +60,7 @@ namespace GoodSamaritan.Controllers
             return View();
         }
 
-        // POST: SmartModels/Create
+        // POST: Smart/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -94,7 +94,7 @@ namespace GoodSamaritan.Controllers
             return View(smartModel);
         }
 
-        // GET: SmartModels/Edit/5
+        // GET: Smart/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -126,7 +126,7 @@ namespace GoodSamaritan.Controllers
             return View(smartModel);
         }
 
-        // POST: SmartModels/Edit/5
+        // POST: Smart/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -159,7 +159,7 @@ namespace GoodSamaritan.Controllers
             return View(smartModel);
         }
 
-        // GET: SmartModels/Delete/5
+        // GET: Smart/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -174,7 +174,7 @@ namespace GoodSamaritan.Controllers
             return View(smartModel);
         }
 
-        // POST: SmartModels/Delete/5
+        // POST: Smart/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

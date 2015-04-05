@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Report Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Client Reports</h2>
+<h3>Month End Statistics</h3>
+
+<h4>Status</h4>
+<ul>
+    <li>Open: @ViewBag.StatusOpen</li>
+    <li>Closed: @ViewBag.StatusClosed</li>
+    <li>Reopened: @ViewBag.StatusReopened</li>
+</ul>
+
+<h4>Program</h4>
+<ul>
+    <li>Crisis: @ViewBag.ProgramCrisis</li>
+    <li>Court: @ViewBag.ProgramCourt</li>
+    <li>SMART: @ViewBag.ProgramSmart</li>
+    <li>DVU: @ViewBag.ProgramDvu</li>
+    <li>MCFD: @ViewBag.ProgramMcfd</li>
+</ul>
+
+<h4>Gender</h4>
+<ul>
+    <li>Male: @ViewBag.GenderMale</li>
+    <li>Female: @ViewBag.GenderFemale</li>
+    <li>Trans: @ViewBag.GenderTrans</li>
+</ul>
+
+<h4>Age</h4>
+<ul>
+    <li>Adult &gt;24 &lt;65: @ViewBag.Age24To65</li>
+    <li>Youth &gt;18 &lt;25: @ViewBag.Age18To25</li>
+    <li>Minor &gt;12 &lt;19: @ViewBag.Age12To19</li>
+    <li>Child: @ViewBag.AgeChild</li>
+    <li>Senior: @ViewBag.AgeSenior</li>
+
+</ul>
+
+@Html.ActionLink("Back", "Index", "Remote");
