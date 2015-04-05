@@ -4,7 +4,7 @@
 
     var ReportController = function ($scope, $http) {
 
-        $http.get("../api/ClientAPI/ReportLogin") // will be changed to http://a3.thedistantvoice.me/api/ClientAPI/ReportLogin in the future..?
+        $http.get("http://a3.thedistantvoice.me/api/ClientAPI/ReportLogin")
         .success(function (response) {
             if (response == "true") {
                 $scope.report = response;
@@ -56,13 +56,13 @@
         $scope.report = report;
 
         // Grabs the fiscal years from the database
-        $http.get("../api/FiscalYearAPI") // will be changed to http://a3.thedistantvoice.me/api/FiscalYearAPI in the future..?
+        $http.get("http://a3.thedistantvoice.me/api/FiscalYearAPI")
         .success(function (response) {
             $scope.years = response;
         });
 
         $scope.getReport = function () {
-            $http.get("../api/ClientAPI/GetReport/" + $scope.select.month + "/" + $scope.select.year) // will be changed to http://a3.thedistantvoice.me/api/ClientAPI/GetReport/ in the future..?
+            $http.get("http://a3.thedistantvoice.me/api/ClientAPI/GetReport/" + $scope.select.month + "/" + $scope.select.year)
             .success(function (response) {
                 $scope.report = response;
             })
@@ -74,12 +74,12 @@
         $scope.login = function () {
             var data = "grant_type=password&" + "username=" + $scope.login.email + "&password=" + $scope.login.password;
 
-            $http.post("http://localhost:51461/Token", data, {
+            $http.post("http://a3.thedistantvoice.me/Token", data, {
                 headers:
             { 'Content-Type': 'application/x-www-form-urlencoded' }
             }).success(function (response) {
 
-                $http.get("../api/ClientAPI/ReportLogin") // will be changed to http://a3.thedistantvoice.me/api/ClientAPI/ReportLogin in the future..?
+                $http.get("http://a3.thedistantvoice.me/api/ClientAPI/ReportLogin")
                 .success(function (response) {
                     if (response == "true") {
                         $scope.report = response;
