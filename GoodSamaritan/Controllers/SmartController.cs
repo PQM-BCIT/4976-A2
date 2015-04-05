@@ -12,6 +12,7 @@ using GoodSamaritan.Models.SmartEntity;
 
 namespace GoodSamaritan.Controllers
 {
+    [Authorize(Roles = "Administrator, Worker")]
     public class SmartController : Controller
     {
         private GoodSamaritanContext db = new GoodSamaritanContext();

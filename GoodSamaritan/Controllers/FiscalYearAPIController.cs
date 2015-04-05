@@ -14,6 +14,7 @@ using GoodSamaritan.Models.ClientEntity;
 
 namespace GoodSamaritan.Controllers
 {
+    [Authorize(Roles = "Administrator, Reporter")]
     public class FiscalYearAPIController : ApiController
     {
         private GoodSamaritanContext db = new GoodSamaritanContext();

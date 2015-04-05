@@ -10,7 +10,7 @@ using GoodSamaritan.Models;
 
 namespace GoodSamaritan.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Administrator")]
     public class ManageController : Controller
     {
         private ApplicationSignInManager _signInManager;

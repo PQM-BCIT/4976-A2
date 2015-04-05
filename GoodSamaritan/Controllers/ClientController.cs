@@ -13,6 +13,7 @@ using System.Diagnostics;
 
 namespace GoodSamaritan.Controllers
 {
+    [Authorize(Roles = "Administrator, Worker")]
     public class ClientController : Controller
     {
         private GoodSamaritanContext db = new GoodSamaritanContext();
