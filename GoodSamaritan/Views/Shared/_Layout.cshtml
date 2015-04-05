@@ -22,18 +22,21 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    @*<li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
                     @{ if (User.IsInRole("Administrator") || User.IsInRole("Reporter"))
                        {
                             <li><a href="~/report.html">View Report</a></li>
                             <li>@Html.ActionLink("Reports", "Index", "Report")</li>
                        }
-
-}
-                    @{ if (User.IsInRole("Administrator"))
-                     {
+                    }
+                    @{ if (User.IsInRole("Administrator") || User.IsInRole("Worker"))
+                        {
                         <li>@Html.ActionLink("Clients", "Index", "Client")</li>
+                        }
+                    }
+                    @{ if (User.IsInRole("Administrator"))
+                        {
                         <li>@Html.ActionLink("Manage Roles", "RoleIndex", "Role")</li>
                         <li>@Html.ActionLink("Manage Users", "Index", "User")</li>
                         <li class="custom-dropdown-header">
