@@ -107,10 +107,6 @@ ul.nav > li:hover ul{
     background: #b15315;
 }
 
-.report-table {
-    padding: 5px;
-}
-
 .custom-nav {
     background: #df691a;
     display: block;
@@ -134,7 +130,7 @@ ul.nav > li:hover ul{
     background: #4e5d6c;
     padding: 50px;
     padding-top: 40px;
-    margin:0 auto;
+    margin: 0 auto;
 }
 
 .custom-content th {
@@ -143,4 +139,8 @@ ul.nav > li:hover ul{
 
 .custom-content td {
     font-size: small;
+}
+
+.custom-container {
+    width: 1140px;
 }
