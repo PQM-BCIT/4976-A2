@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace GoodSamaritan.Controllers
 {
-    //[Authorize(Roles="Administrator, Worker, Reporter")]
+    [Authorize(Roles="Administrator, Reporter")]
     public class ReportController : Controller
     {
         private GoodSamaritanContext db = new GoodSamaritanContext();
