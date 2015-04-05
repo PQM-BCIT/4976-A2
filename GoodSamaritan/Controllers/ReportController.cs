@@ -33,6 +33,11 @@ namespace GoodSamaritan.Controllers
                            && q.FiscalYearId == year
                            select q);
 
+            ViewBag.CurDate = DateTime.Now.ToString("MM/dd/yyyy");
+
+            ViewBag.MonthId = new SelectList(months, collection[0]);
+            ViewBag.FiscalYearId = new SelectList(db.FiscalYearModel, "FiscalYearId", "FiscalYear", collection[1]);
+
             ViewBag.StatusOpen = (from q in db.ClientModel
                                   where q.Month == month
                                   && q.FiscalYearId == year
