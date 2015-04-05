@@ -4,8 +4,11 @@
 
     var ReportController = function ($scope, $http) {
 
+        $scope.showLoading = true;
+
         $http.get("http://a3.thedistantvoice.me/api/ClientAPI/ReportLogin")
         .success(function (response) {
+            $scope.showLoading = false;
             if (response == "true") {
                 $scope.report = response;
                 $scope.showLogin = false;
@@ -42,13 +45,17 @@
         });
 
         $scope.getReport = function () {
+
+            $scope.showReportLoading = true;
             $http.get("http://a3.thedistantvoice.me/api/ClientAPI/GetReport/" + $scope.select.month + "/" + $scope.select.year)
             .success(function (response) {
                 $scope.report = response;
+                $scope.showResults = true;
             })
             .error(function (response) {
                 alert("ERROR");
             });
+            $scope.showReportLoading = false;
         }
 
         $scope.login = function () {
