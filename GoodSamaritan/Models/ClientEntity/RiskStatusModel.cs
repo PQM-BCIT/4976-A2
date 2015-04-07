@@ -10,6 +10,9 @@ namespace GoodSamaritan.Models
     {
         [Key]
         public int RiskStatusId { get; set; }
+
+        [MaxLength(64)]
+        [Display(Name = "Risk Status")]
         public string RiskStatus { get; set; }
 
         public List<ClientModel> Client { get; set; }

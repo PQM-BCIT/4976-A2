@@ -1,0 +1,126 @@
+﻿@{
+    ViewBag.Title = "Report Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="custom-content">
+    <h1>Client Report</h1>
+    <h4>Month End Statistics</h4>
+    <br/>
+    @using (Html.BeginForm("ViewStats", "Report"))
+    {
+        <table>
+            <tr>
+                <th style="width:100px;">Report date:</th>
+                <td>@ViewBag.CurDate</td>
+            </tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr>
+                <th>Report for:</th>
+                <td style="width:155px;">
+                    @Html.DropDownList("month", (SelectList)ViewBag.MonthId, new { @class = "custom-select" })
+                </td>
+                <td style="width:155px;">
+                    @Html.DropDownList("year", (SelectList)ViewBag.FiscalYearId, new { @class = "custom-select" })
+                </td>
+                <td><input type="submit" class="custom-button" value="Get Report" /></td>
+            </tr>
+        </table>
+    }
+
+    <hr />
+
+    <table>
+        <tr>
+            <th style="width:100px;">Status</th>
+            <td style="width:100px;">Open:</td>
+            <td>@ViewBag.StatusOpen</td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>Closed:</td>
+            <td>@ViewBag.StatusClosed</td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>Reopened:</td>
+            <td>@ViewBag.StatusReopened</td>
+        </tr>
+
+        <tr><td>&nbsp;</td></tr>
+
+        <tr>
+            <th>Program</th>
+            <td>Crisis:</td>
+            <td>@ViewBag.ProgramCrisis</td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>Court:</td>
+            <td>@ViewBag.ProgramCourt</td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>SMART:</td>
+            <td>@ViewBag.ProgramSmart</td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>DVU:</td>
+            <td>@ViewBag.ProgramDvu</td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>MCFD:</td>
+            <td>@ViewBag.ProgramMcfd</td>
+        </tr>
+
+        <tr><td>&nbsp;</td></tr>
+
+        <tr>
+            <th>Gender</th>
+            <td>Female:</td>
+            <td>@ViewBag.GenderFemale</td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>Male:</td>
+            <td>@ViewBag.GenderMale</td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>Trans:</td>
+            <td>@ViewBag.GenderTrans</td>
+        </tr>
+
+        <tr><td>&nbsp;</td></tr>
+
+        <tr>
+            <th>Age</th>
+            <td>Adult &gt; 24 &lt; 65:</td>
+            <td>@ViewBag.Age24To65</td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>Youth &gt; 18 &lt; 25:</td>
+            <td>@ViewBag.Age18To25</td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>Minor &gt; 12 &lt; 19:</td>
+            <td>@ViewBag.Age12To19</td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>Child:</td>
+            <td>@ViewBag.AgeChild</td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>Senior:</td>
+            <td>@ViewBag.AgeSenior</td>
+        </tr>
+    </table>
+    <br />
+    @Html.ActionLink("Back to Main", "Index", "Home")
+</div>

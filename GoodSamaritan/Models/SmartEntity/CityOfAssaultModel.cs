@@ -10,6 +10,9 @@ namespace GoodSamaritan.Models.SmartEntity
     {
         [Key]
         public int CityOfAssaultId { get; set; }
+
+        [MaxLength(64)]
+        [Display(Name = "City Of Assault")]
         public string CityOfAssault { get; set; }
 
         public List<SmartModel> SmartEntity { get; set; }

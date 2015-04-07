@@ -10,6 +10,9 @@ namespace GoodSamaritan.Models
     {
         [Key]
         public int AssignedWorkerId { get; set; }
+
+        [MaxLength(64)]
+        [Display(Name = "Assigned Worker")]
         public string AssignedWorker { get; set; }
 
         public List<ClientModel> Client { get; set; }

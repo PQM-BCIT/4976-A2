@@ -11,6 +11,9 @@ namespace GoodSamaritan.Models.SmartEntity
         // Yes; No; N/A
         [Key]
         public int ThirdPartyReportId { get; set; }
+
+        [MaxLength(64)]
+        [Display(Name = "Third Party Report")]
         public string ThirdPartyReport { get; set; }
 
         public List<SmartModel> SmartEntity { get; set; }

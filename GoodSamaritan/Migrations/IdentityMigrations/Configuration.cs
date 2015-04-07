@@ -12,7 +12,7 @@ namespace GoodSamaritan.Migrations.IdentityMigrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
             MigrationsDirectory = @"Migrations\IdentityMigrations";
         }
 
@@ -49,7 +49,7 @@ namespace GoodSamaritan.Migrations.IdentityMigrations
             var User = UserManager.Create(Adam, "P@$$w0rd");
             UserManager.AddToRole(Adam.Id, "Administrator");
 
-            var Wendy = new ApplicationUser() { UserName = "wendy@gs.ca", Email = "wendy.gs.ca" };
+            var Wendy = new ApplicationUser() { UserName = "wendy@gs.ca", Email = "wendy@gs.ca" };
             var User2 = UserManager.Create(Wendy, "P@$$w0rd");
             UserManager.AddToRole(Wendy.Id, "Worker");
 

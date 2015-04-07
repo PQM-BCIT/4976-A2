@@ -1,11 +1,24 @@
-﻿
+﻿///////////////////////////////
+
+// On new start up (clone) do the following:
 sqllocaldb.exe stop v11.0
 sqllocaldb.exe delete v11.0
 
 update-database -ConfigurationTypeName GoodSamaritan.Migrations.GoodSamaritanMigrations.Configuration
 update-database -ConfigurationTypeName GoodSamaritan.Migrations.IdentityMigrations.Configuration
 
+///////////////////////////////
+
+// Only needed when new changes were made to context
 add-migration -ConfigurationTypeName GoodSamaritan.Migrations.GoodSamaritanMigrations.Configuration "Initial"
 add-migration -ConfigurationTypeName GoodSamaritan.Migrations.IdentityMigrations.Configuration "Initial"
 
+//////////////////////////////
+
+// Potential handlings for other errors
 Install-Package EntityFramework -IncludePrerelease
+
+Uninstall-Package EntityFramework -Force
+Install-Package EntityFramework -Pre
+
+/////////////////////////////
