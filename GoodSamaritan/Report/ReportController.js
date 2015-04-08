@@ -69,21 +69,23 @@
                 headers:
             { 'Content-Type': 'application/x-www-form-urlencoded' }
             }).success(function (response) {
-
-                $http.get("http://a3.thedistantvoice.me/api/ClientAPI/ReportLogin")
-                .success(function (response) {
-                    if (response == "true") {
-                        $scope.report = response;
-                        $scope.showLogin = false;
-                        $scope.showReport = true;
-                        getYear();
-                    } else {
-                        $scope.loginError = "User is not authorized to view this page."
-                    }
-                })
-                .error(function (response) {
+                if (response.roles.indexOf("Administrator") > -1 ||
+					response.roles.indexOf("Reporter") > -1) {
+                    // $http.get("http://a3.thedistantvoice.me/api/ClientAPI/ReportLogin")
+                    // .success(function (response) {
+                    // if (response == "true") {
+                    $scope.report = response;
+                    $scope.showLogin = false;
+                    $scope.showReport = true;
+                    getYear();
+                } else {
+                    //alert(JSON.stringify(response));
                     $scope.loginError = "User is not authorized to view this page."
-                });
+                }
+                // })
+                // .error(function (response) {
+                // $scope.loginError = "Error checking authorization."
+                // });
 
             }).error(function (error) {
                 $scope.loginError = "Invalid login attempt."

@@ -14,7 +14,7 @@ using GoodSamaritan.Report;
 
 namespace GoodSamaritan.Controllers
 {
-    [Authorize(Roles = "Administrator, Reporter")]
+    //[Authorize(Roles = "Administrator, Reporter")]
     [RoutePrefix("api/ClientAPI")]
     public class ClientAPIController : ApiController
     {
@@ -121,9 +121,11 @@ namespace GoodSamaritan.Controllers
 
         [HttpGet]
         [Route("ReportLogin")]
+        [Authorize(Roles = "Administrator, Reporter")]
         public bool ReportLogin()
         {
             return true;
+            //return true;
         }
 
         [HttpGet]
