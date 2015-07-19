@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
@@ -11,25 +12,26 @@ using GoodSamaritan.Models.SmartEntity;
 
 namespace GoodSamaritan.Controllers
 {
-    public class SmartModelsController : Controller
+    [Authorize(Roles = "Administrator, Worker")]
+    public class SmartController : Controller
     {
         private GoodSamaritanContext db = new GoodSamaritanContext();
 
-        // GET: SmartModels
-        public ActionResult Index()
+        // GET: Smart
+        public async Task<ActionResult> Index()
         {
             var smartModel = db.SmartModel.Include(s => s.BadDateReport).Include(s => s.CityOfAssault).Include(s => s.CityOfResidence).Include(s => s.DrugFacilitatedAssault).Include(s => s.EvidenceStored).Include(s => s.HIVMeds).Include(s => s.HospitalAttended).Include(s => s.MedicalOnly).Include(s => s.MultiplePerpetrators).Include(s => s.PoliceAttendance).Include(s => s.PoliceReported).Include(s => s.ReferredToCBVS).Include(s => s.ReferringHospital).Include(s => s.SexWorkExploitation).Include(s => s.SocialWorkAttendance).Include(s => s.ThirdPartyReport).Include(s => s.VictimServicesAttendance);
-            return View(smartModel.ToList());
+            return View(await smartModel.ToListAsync());
         }
 
-        // GET: SmartModels/Details/5
-        public ActionResult Details(int? id)
+        // GET: Smart/Details/5
+        public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            SmartModel smartModel = db.SmartModel.Find(id);
+            SmartModel smartModel = await db.SmartModel.FindAsync(id);
             if (smartModel == null)
             {
                 return HttpNotFound();
@@ -37,7 +39,7 @@ namespace GoodSamaritan.Controllers
             return View(smartModel);
         }
 
-        // GET: SmartModels/Create
+        // GET: Smart/Create
         public ActionResult Create()
         {
             ViewBag.BadDateReportId = new SelectList(db.BadDateReportModel, "BadDateReportId", "BadDateReport");
@@ -60,17 +62,17 @@ namespace GoodSamaritan.Controllers
             return View();
         }
 
-        // POST: SmartModels/Create
+        // POST: Smart/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ClientReferenceNumber,SexWorkerExploitationId,MultiplePerpetratorsId,DrugFacilitatedAssaultId,CityOfAssaultId,CityOfResidenceId,AccompanimentMinute,ReferringHospitalId,HospitalAttendedId,SocialWorkAttendanceId,PoliceAttendanceId,VictimServicesAttendanceId,MedicalOnlyId,EvidenceStoredId,HIVMedsModelId,ReferredToCBVSId,PoliceReportedId,ThirdPartyReportId,BadDateReportId,NumberTransportsProvided,ReferredToNursePractitioner")] SmartModel smartModel)
+        public async Task<ActionResult> Create([Bind(Include = "ClientReferenceNumber,SexWorkerExploitationId,MultiplePerpetratorsId,DrugFacilitatedAssaultId,CityOfAssaultId,CityOfResidenceId,AccompanimentMinute,ReferringHospitalId,HospitalAttendedId,SocialWorkAttendanceId,PoliceAttendanceId,VictimServicesAttendanceId,MedicalOnlyId,EvidenceStoredId,HIVMedsModelId,ReferredToCBVSId,PoliceReportedId,ThirdPartyReportId,BadDateReportId,NumberTransportsProvided,ReferredToNursePractitioner")] SmartModel smartModel)
         {
             if (ModelState.IsValid)
             {
                 db.SmartModel.Add(smartModel);
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
@@ -94,14 +96,14 @@ namespace GoodSamaritan.Controllers
             return View(smartModel);
         }
 
-        // GET: SmartModels/Edit/5
-        public ActionResult Edit(int? id)
+        // GET: Smart/Edit/5
+        public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            SmartModel smartModel = db.SmartModel.Find(id);
+            SmartModel smartModel = await db.SmartModel.FindAsync(id);
             if (smartModel == null)
             {
                 return HttpNotFound();
@@ -126,17 +128,17 @@ namespace GoodSamaritan.Controllers
             return View(smartModel);
         }
 
-        // POST: SmartModels/Edit/5
+        // POST: Smart/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ClientReferenceNumber,SexWorkerExploitationId,MultiplePerpetratorsId,DrugFacilitatedAssaultId,CityOfAssaultId,CityOfResidenceId,AccompanimentMinute,ReferringHospitalId,HospitalAttendedId,SocialWorkAttendanceId,PoliceAttendanceId,VictimServicesAttendanceId,MedicalOnlyId,EvidenceStoredId,HIVMedsModelId,ReferredToCBVSId,PoliceReportedId,ThirdPartyReportId,BadDateReportId,NumberTransportsProvided,ReferredToNursePractitioner")] SmartModel smartModel)
+        public async Task<ActionResult> Edit([Bind(Include = "ClientReferenceNumber,SexWorkerExploitationId,MultiplePerpetratorsId,DrugFacilitatedAssaultId,CityOfAssaultId,CityOfResidenceId,AccompanimentMinute,ReferringHospitalId,HospitalAttendedId,SocialWorkAttendanceId,PoliceAttendanceId,VictimServicesAttendanceId,MedicalOnlyId,EvidenceStoredId,HIVMedsModelId,ReferredToCBVSId,PoliceReportedId,ThirdPartyReportId,BadDateReportId,NumberTransportsProvided,ReferredToNursePractitioner")] SmartModel smartModel)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(smartModel).State = EntityState.Modified;
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
             ViewBag.BadDateReportId = new SelectList(db.BadDateReportModel, "BadDateReportId", "BadDateReport", smartModel.BadDateReportId);
@@ -159,14 +161,14 @@ namespace GoodSamaritan.Controllers
             return View(smartModel);
         }
 
-        // GET: SmartModels/Delete/5
-        public ActionResult Delete(int? id)
+        // GET: Smart/Delete/5
+        public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            SmartModel smartModel = db.SmartModel.Find(id);
+            SmartModel smartModel = await db.SmartModel.FindAsync(id);
             if (smartModel == null)
             {
                 return HttpNotFound();
@@ -174,14 +176,14 @@ namespace GoodSamaritan.Controllers
             return View(smartModel);
         }
 
-        // POST: SmartModels/Delete/5
+        // POST: Smart/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            SmartModel smartModel = db.SmartModel.Find(id);
+            SmartModel smartModel = await db.SmartModel.FindAsync(id);
             db.SmartModel.Remove(smartModel);
-            db.SaveChanges();
+            await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 

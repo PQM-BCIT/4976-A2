@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Report Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Reports</h2>
+@using (Html.BeginForm("ViewStats", "Report"))
+{
+<div class="form-group">
+    @Html.Label("Month", htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.DropDownList("month", (SelectList)ViewBag.MonthId, new { @class="custom-select"})
+    </div>
+</div>
+<div class="form-group">
+    @Html.Label("Fiscal Year", htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.DropDownList("year", (SelectList)ViewBag.FiscalYearId, new { @class = "custom-select" })
+    </div>
+</div>
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <input type="submit" value="Get Report" class="custom-button"/>
+    </div>
+</div>
+}

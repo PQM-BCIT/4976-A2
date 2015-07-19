@@ -17,15 +17,28 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Good Samaritan", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    @{ if (User.IsInRole("Administrator"))
+                    @*<li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
+                    @{ if (User.IsInRole("Administrator") || User.IsInRole("Reporter"))
                      {
+                        @*<li>@Html.ActionLink("Reports", "Index", "Report")</li>*@
+                            <li><a href="~/Report/Index">MVC Report</a></li>
+                            <li><a href="~/report.html">Angular Report</a></li>
+                            
+                     }
+                    }
+                    @{ if (User.IsInRole("Administrator") || User.IsInRole("Worker"))
+                        {
+                        <li>@Html.ActionLink("Clients", "Index", "Client")</li>
+                        }
+                    }
+                    @{ if (User.IsInRole("Administrator"))
+                        {
                         <li>@Html.ActionLink("Manage Roles", "RoleIndex", "Role")</li>
                         <li>@Html.ActionLink("Manage Users", "Index", "User")</li>
                         <li class="custom-dropdown-header">
@@ -40,7 +53,7 @@
                                 <li>@Html.ActionLink("Ethnicity", "Index", "Ethnicity")</li>
                                 <li>@Html.ActionLink("Family Violence File", "Index", "FamilyViolenceFile")</li>
                                 <li>@Html.ActionLink("Fiscal Year", "Index", "FiscalYear")</li>
-                                <li>@Html.ActionLink("Incident", "Index", "IncidentController")</li>
+                                <li>@Html.ActionLink("Incident", "Index", "Incident")</li>
                                 <li>@Html.ActionLink("Program", "Index", "Program")</li>
                                 <li>@Html.ActionLink("Referral Contact", "Index", "ReferralContact")</li>
                                 <li>@Html.ActionLink("Referral Source", "Index", "ReferralSource")</li>
@@ -81,7 +94,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Good Samaritan - Justin Chee & Paolo Montano</p>
         </footer>
     </div>
 

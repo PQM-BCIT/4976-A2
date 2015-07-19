@@ -40,21 +40,39 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.1.3-beta1\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.1.3-beta1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Cors">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.3\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.2\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -158,8 +176,10 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\ClientModelsController.cs" />
+    <Compile Include="Controllers\ClientAPIController.cs" />
+    <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\Client\AbuserRelationshipController.cs" />
     <Compile Include="Controllers\Client\AgeController.cs" />
     <Compile Include="Controllers\Client\AssignedWorkerController.cs" />
@@ -178,10 +198,12 @@
     <Compile Include="Controllers\Client\ServiceController.cs" />
     <Compile Include="Controllers\Client\StatusOfFileController.cs" />
     <Compile Include="Controllers\Client\VictimOfIncidentController.cs" />
+    <Compile Include="Controllers\FiscalYearAPIController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
-    <Compile Include="Controllers\SmartModelsController.cs" />
+    <Compile Include="Controllers\SmartController.cs" />
     <Compile Include="Controllers\Smart\BadDateReportController.cs" />
     <Compile Include="Controllers\Smart\CityOfAssaultController.cs" />
     <Compile Include="Controllers\Smart\CityOfResidenceController.cs" />
@@ -247,6 +269,8 @@
     <Compile Include="Models\SmartEntity\ThirdPartyReportModel.cs" />
     <Compile Include="Models\SmartEntity\VictimServicesAttendanceModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\ApplicationOAuthProvider.cs" />
+    <Compile Include="Report\ReportCount.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -265,8 +289,17 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Report.html" />
+    <Content Include="Report\ReportController.js" />
+    <Content Include="Scripts\angular-route.js" />
+    <Content Include="Scripts\angular-route.min.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Scripts\errors.json" />
+    <Content Include="Scripts\angular-route.min.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -278,6 +311,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\smart.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -492,17 +526,21 @@
     <Content Include="Views\Role\RoleCreate.cshtml" />
     <Content Include="Views\Role\RoleIndex.cshtml" />
     <Content Include="Views\Role\RoleAddToUser.cshtml" />
-    <Content Include="Views\ClientModels\Create.cshtml" />
-    <Content Include="Views\ClientModels\Delete.cshtml" />
-    <Content Include="Views\ClientModels\Details.cshtml" />
-    <Content Include="Views\ClientModels\Edit.cshtml" />
-    <Content Include="Views\ClientModels\Index.cshtml" />
-    <Content Include="Views\SmartModels\Create.cshtml" />
-    <Content Include="Views\SmartModels\Delete.cshtml" />
-    <Content Include="Views\SmartModels\Details.cshtml" />
-    <Content Include="Views\SmartModels\Edit.cshtml" />
-    <Content Include="Views\SmartModels\Index.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Scripts\version.json" />
+    <Content Include="Views\Home\Denied.cshtml" />
+    <Content Include="Views\Report\Index.cshtml" />
+    <Content Include="Views\Report\ViewStats.cshtml" />
+    <Content Include="Views\Client\Create.cshtml" />
+    <Content Include="Views\Client\Delete.cshtml" />
+    <Content Include="Views\Client\Details.cshtml" />
+    <Content Include="Views\Client\Edit.cshtml" />
+    <Content Include="Views\Client\Index.cshtml" />
+    <Content Include="Views\Smart\Create.cshtml" />
+    <Content Include="Views\Smart\Delete.cshtml" />
+    <Content Include="Views\Smart\Details.cshtml" />
+    <Content Include="Views\Smart\Edit.cshtml" />
+    <Content Include="Views\Smart\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

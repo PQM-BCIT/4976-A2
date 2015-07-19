@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace GoodSamaritan.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class RoleController : Controller
     {
         // GET: Role
